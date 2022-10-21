@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Điểm trung bình</title>
+</head>
+<body>
+
+</body>
+<script>
+    document.write('<h1>Bài nhập và tính điểm trung bình</h1>')
+    let phy = +prompt('Nhập điểm vật lý')
+    let che = +prompt('Nhập điểm hóa học')
+    let bio = +prompt('Nhập điểm sinh học')
+    let aver = +(phy + che + bio)/3
+
+    document.write('Điểm trung bình của bạn là'+ ' '+ aver);
+
+    switch (true) {
+            case aver < 5:
+            document.write('huhu học lại nhé')
+            break;
+
+            case aver < 6:
+                document.write('vượt cạn thành công nhé')
+            break;
+
+            case aver < 7:
+                document.write('cần cố gắng thêm')
+            break;
+
+                default:
+                    document.write('tốt lắm')
+            break;
+    }
+
+</script>
+</html>
