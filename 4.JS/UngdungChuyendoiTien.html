@@ -44,18 +44,15 @@
        let a = document.getElementById('amount').value;
        let b = document.getElementById('frcur').value;
        let c = document.getElementById('tocur').value;
-       if (b === 'VND' && c === 'VND') {
-           document.getElementById('result').innerText = a + 'VND'
-       }
-       else if (b === 'VND' && c === 'USD') {
-           document.getElementById('result').innerText = (a / 20000) + 'USD'
-       }
-       else if (b === 'USD' && c === 'USD') {
-           document.getElementById('result').innerText= a + 'USD'
-       }
-       else {
-           document.getElementById('result').innerText = (a * 20000) + 'VND'
-       }
+        if (b === c) {
+            document.getElementById('result').innerText= a + c
+        }
+        else if (b === 'USD' && c === 'VND'){
+            document.getElementById('result').innerText= (a * 20000) + c
+        }
+        else {
+            document.getElementById('result').innerText= (a/20000) + c
+        }
    }
 </script>
 </html>
