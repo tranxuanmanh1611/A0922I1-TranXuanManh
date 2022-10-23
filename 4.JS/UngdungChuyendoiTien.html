@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chuyển đổi tỉ giá</title>
+</head>
+<body>
+<h1>ỨNG DỤNG CHUYỂN ĐỔI TỈ GIÁ</h1>
+<form>
+    <table border="1">
+        <tr>
+            <th>Amount</th>
+            <th>From Currency</th>
+            <th>To Currency</th>
+        </tr>
+        <tr>
+            <td>
+                <input type="text" id="amount" placeholder="Nhập số tiền">
+            </td>
+            <td>
+                <select id="frcur">
+                    <option>VND</option>
+                    <option>USD</option>
+                </select>
+            </td>
+            <td>
+                <select id="tocur">
+                    <option>VND</option>
+                    <option>USD</option>
+                </select>
+            </td>
+            <td>
+                <button type="button" onclick="domoney();">Chuyển đổi</button>
+            </td>
+        </tr>
+        <tr>
+            <td id="result">0</td>
+        </tr>
+    </table>
+</form>
+</body>
+<script>
+   function domoney() {
+       let a = document.getElementById('amount').value;
+       let b = document.getElementById('frcur').value;
+       let c = document.getElementById('tocur').value;
+       if (b === 'VND' && c === 'VND') {
+           document.getElementById('result').innerText = a + 'VND'
+       }
+       else if (b === 'VND' && c === 'USD') {
+           document.getElementById('result').innerText = (a / 20000) + 'USD'
+       }
+       else if (b === 'USD' && c === 'USD') {
+           document.getElementById('result').innerText= a + 'USD'
+       }
+       else {
+           document.getElementById('result').innerText = (a * 20000) + 'VND'
+       }
+   }
+</script>
+</html>
