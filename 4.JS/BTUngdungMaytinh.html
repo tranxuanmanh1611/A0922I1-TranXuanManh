@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Máy tính</title>
+</head>
+<body>
+<h1>Caculator</h1>
+<form>
+    <label for="num1"></label><input type="number" placeholder="nhập vào đây" id="num1">
+   <label for="num2"></label> <input type="number" placeholder="nhập vào đây" id="num2">
+    <br><br>
+    <button type="button" onclick="cong();">Cộng</button>
+    <button type="button" onclick="tru();">Trừ</button>
+    <button type="button" onclick="nhan();">Nhân</button>
+    <button type="button" onclick="chia();">Chia</button>
+    <table>
+<tr>
+    <td> Kết quả phép tính bằng</td>
+    <td id="result">0</td>
+</tr>
+    </table>
+</form>
+</body>
+<script>
+
+    function cong() {
+        let a = +document.getElementById('num1').value;
+        let b = +document.getElementById('num2').value;
+        let result1 = (a + b)
+        document.getElementById('result').innerText = result1;
+    }
+    function tru() {
+        let a = +document.getElementById('num1').value;
+        let b = +document.getElementById('num2').value;
+        let result2 = (a-b)
+        document.getElementById('result').innerText = result2;
+    }
+    function nhan() {
+        let a = +document.getElementById('num1').value;
+        let b = +document.getElementById('num2').value;
+        let result3 = (a*b)
+        document.getElementById('result').innerText = result3;
+    }
+    function chia() {
+        let a = +document.getElementById('num1').value;
+        let b = +document.getElementById('num2').value;
+        let result4 = (a/b)
+        document.getElementById('result').innerText = result4;
+    }
+</script>
+</html>
