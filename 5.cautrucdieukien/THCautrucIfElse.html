@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Câu hỏi yes/no</title>
+</head>
+<body>
+<form>
+    <h2>What is the '"offical"' name of JavaScript?</h2>
+    <input type="text" placeholder="Input your answer here" id="answer">
+    <button type="button" onclick="check();">Check</button>
+</form>
+</body>
+<script>
+    function check() {
+let a = document.getElementById('answer').value;
+        if (a === 'ECMAScript'){
+            alert('You are right.')
+        }
+        else{
+            alert("Didn't know? ECMAScript")
+        }
+    }
+</script>
+</html>

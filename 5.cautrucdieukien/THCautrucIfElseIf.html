@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chương trình kiểm tra đăng nhập</title>
+</head>
+<body>
+<h2>Login</h2>
+<form>
+    <input type="text" id="username" placeholder="input your username here">
+    <input type="password" id="password" placeholder="input your pass here">
+    <br><br>
+    <button type="button" onclick="login();">login</button>
+</form>
+</body>
+<script>
+function login() {
+    let user = document.getElementById('username').value;
+    let pass = document.getElementById('password').value;
+    if (user === 'Admin' & pass === 'Admin') {
+        alert('Kính chào đại ka trở lại!')
+    } else if (user !== 'Admin') {
+        alert('tao không quen mày')
+    } else if (pass !== 'Admin') {
+        alert('Mật khẩu sai! Mày có phải đại ca không ?')
+    } else {
+        alert('Fail')
+    }
+}
+</script>
+</html>
