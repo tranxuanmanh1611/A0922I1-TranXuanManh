@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sử dụng toán tử</title>
+</head>
+<body>
+
+</body>
+<script>
+    //tạo 2 biến có thuọc tính thu lại giá trị
+    let inPutHeight = prompt('Nhập vào đây')
+    let inPutwidth = prompt('Nhập vào đây')
+    // nhưng mà 2 biến này là dữ liệu kiểu string, nên ép sang number bằng hàm parse
+    //mà khai báo kiểu let thì không dùng lại biến để khai báo được nên phải đặtteen một biến mới
+
+    let Height = parseInt(inPutHeight)
+    let width = parseInt(inPutwidth)
+    let area = Height * width;
+    document.write('diện tích là' + area);
+</script>
+</html>

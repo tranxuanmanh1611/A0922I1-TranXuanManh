@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bai 5</title>
+</head>
+<body>
+
+</body>
+<script>
+    let midterm = +prompt('Nhập điểm giữa kì');
+    let endterm = +prompt('Nhập điểm cuối kì');
+    let result = (midterm+endterm)/2;
+    if (result < 3){
+        alert('Học lại')
+    } else if (result<5){
+        alert('Học lực yếu')
+    } else if (result<6.5){
+        alert('Học lực trung bình')
+    } else if (result<8.5){
+        alert('Học lực khá')
+    } else if (result<9.5){
+        alert('Học lực giỏi')
+    } else {
+        alert('Học lực xuất sắc')
+    }
+</script>
+</html>

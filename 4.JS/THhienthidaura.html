@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>THhienthidaura</title>
+</head>
+<body>
+
+<h1>Hiển thị kết quả sử dụng HTML</h1>
+<button type="button" onclick="showMessage();showMessage1();showMessage3()">đây là cái button ngoài div</button>
+
+<button type="button" onclick="showMessage();showMessage1()">Click Me!</button>
+
+<div id="messageDiv"></div>
+</body>
+
+<script>
+
+function showMessage() {
+document.getElementById('messageDiv').innerHTML = 'OK00';
+}
+function showMessage1() {
+    alert('xin chao')
+
+}
+function showMessage3() {
+console.log('xin chao');
+}
+</script>
+
+</html>

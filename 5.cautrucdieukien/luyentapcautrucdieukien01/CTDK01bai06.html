@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bai 6</title>
+</head>
+<body>
+<label><input type="number" placeholder="Nhập doanh số tháng này" id="sale"></label>
+<button onclick="result();">Tính toán</button>
+<br><p id="comision"> </p>
+<p id="result"> </p>
+</body>
+<script>
+    function result() {
+        let a = +document.getElementById('sale').value;
+        let b;
+        if (a < 5000000){
+            document.getElementById('comision').innerHTML='Hệ số là 0.03';
+            b=0.03;
+        } else if (a<7000000){
+            document.getElementById('comision').innerText='Hệ số 0.05';
+            b=0.05;
+        } else {
+            document.getElementById('comision').innerText='Hệ số 0.07';
+            b=0.07
+            }
+        let c = a*b;
+        document.getElementById('result').innerText='Hoa hồng tháng này của bạn là'+ ' '+ c
+    }
+
+</script>
+</html>

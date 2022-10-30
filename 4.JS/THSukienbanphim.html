@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TH sự kiện bàn phím</title>
+</head>
+<body onload="docready()">
+<img id="cat1" src="https://media.istockphoto.com/vectors/pixel-art-8bit-cute-kitten-domestic-pet-saying-meow-isolated-vector-vector-id1269703326" alt="conmeo"
+     style="height: 150px;position:absolute ;left: 0; top: 0px;/">
+<script>
+    function upArrowPressed() {
+        var dichuyen = document.getElementById('cat1');
+        dichuyen.style.top= parseInt(dichuyen.style.top) - 5 + 'px';
+    }
+    function dowArrowPress() {
+        var dichuyen = document.getElementById('cat1');
+        dichuyen.style.top= parseInt(dichuyen.style.top) + 5 + 'px';
+    }
+    function leftArrowPress() {
+        var dichuyen = document.getElementById('cat1');
+        dichuyen.style.left=parseInt(dichuyen.style.left) - 5 + 'px';
+    }
+    function rightArrowPressed() {
+        var dichuyen = document.getElementById('cat1');
+        dichuyen.style.left=parseInt(dichuyen.style.left) + 5 + 'px';
+    }
+    function nhanphim(evt) {
+        switch (evt.KeyCode) {
+            case 37:
+                leftArrowPress();
+                break;
+            case 39:
+                rightArrowPressed();
+                break;
+            case 38:
+                upArrowPressed();
+                break;
+            case 40:
+                dowArrowPress();
+                break;
+        }
+    }
+    function docready() {
+        window.addEventListener('gogo',nhanphim);
+    }
+
+</script>
+</body>
+</html>

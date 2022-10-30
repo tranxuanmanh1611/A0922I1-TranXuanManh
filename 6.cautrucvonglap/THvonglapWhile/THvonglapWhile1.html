@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TH vòng lặp while 1</title>
+</head>
+<body>
+<p id="display"></p>
+</body>
+<script>
+    let num = 0;
+    let total=0;
+    while (num!==-1) {
+        num= +prompt('Nhập vào các số, nếu muốn dừng lại thì nhập -1');
+        total  += num
+        alert(num)
+    }
+    document.write(parseFloat(total +1));
+</script>
+</html>
