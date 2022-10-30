@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tính tiền tiết kiệm</title>
+</head>
+<body>
+<table border="1">
+    <tr>
+        <th>Số tiền gởi</th>
+        <th>Kì hạn (theo tháng)</th>
+        <th>Số tiền nhận được cuối kì</th>
+    </tr>
+    <tr>
+        <td><label><input type="text" id="amount"></label></td>
+        <td><label><input type="text" id="month"></label></td>
+        <td id="result"> </td>
+        <td><label><button onclick="cal();">Tính toán</button></label></td>
+    </tr>
+</table>
+</body>
+<script>
+    function cal() {
+let amount=+document.getElementById('amount').value;
+let month=+document.getElementById('month').value;
+let result=amount*Math.pow(1.006,month);
+document.getElementById('result').innerText=result;
+    }
+</script>
+</html>

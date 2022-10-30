@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tính giá điện</title>
+</head>
+<body>
+
+</body>
+<script>
+    let a=+prompt('Nhập số chữ điện đã sử dụng tháng này theo KWh');
+    if (a<=50){
+        let cost=a*1678;
+        alert('Tiền điện tháng này là'+' '+cost+' VND')
+    } else if (a<=100){
+        let cost= (50*1678) + (a-50)*1734;
+        alert('Tiền điện tháng này là'+' '+cost+' VND')
+    } else if (a<=200){
+        let cost= (50*1678) +(50*1734)+(a-100)*2014
+        alert('Tiền điện tháng này là'+' '+cost+' VND')
+    }
+</script>
+</html>

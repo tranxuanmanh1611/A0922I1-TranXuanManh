@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Phương trình bậc 1</title>
+</head>
+<body>
+<table>
+    <tr align="center">
+        <td>a</td>
+        <td>x</td>
+        <td>+</td>
+        <td>b</td>
+        <td>=</td>
+        <td>0</td>
+    </tr>
+    <tr>
+        <td><label><input type="text" placeholder="Nhập hệ số a" id="a"></label></td>
+        <td></td>
+        <td></td>
+        <td><label><input type="text" placeholder="Nhập hệ số b" id="b"></label></td>
+    </tr>
+    <tr><td><button onclick="cal();">Giải</button></td></tr>
+    <tr><td id="result"></td></tr>
+</table>
+</body>
+<script>
+    function cal() {
+        let a = +document.getElementById('a').value;
+        let b = +document.getElementById('b').value;
+        if (a === 0&&b!==0) {
+            document.getElementById('result').innerText = 'Phương trình vô nghiệm'
+        }else if(a===0&&b===0){
+            document.getElementById('result').innerText = 'Phương trình có vô số nghiệm'
+        }
+        else {
+            let x = (-1) * b / a;
+            document.getElementById('result').innerText = 'nghiệm của phương trình là' + ' ' + x;
+        }
+    }
+</script>
+</html>

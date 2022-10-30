@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>phương trình bậc 2</title>
+</head>
+<body>
+<table>
+    <tr>
+        <td>a</td>
+        <td>x<sup>2</sup></td>
+        <td>+</td>
+        <td>b</td>
+        <td>x</td>
+        <td>+</td>
+        <td>c</td>
+        <td>=</td>
+        <td>0</td>
+    </tr>
+    <tr>
+        <td><label><input type="text" id="a" placeholder="Nhập hệ số a"></label></td>
+        <td></td>
+        <td></td>
+        <td><label><input type="text" id="b" placeholder="Nhập hệ số b"></label></td>
+        <td></td>
+        <td></td>
+        <td><label><input type="text" id="c" placeholder="Nhập hệ số c"></label></td>
+    </tr>
+    <tr><td><button onclick="cal();">Giải</button></td></tr>
+</table>
+</body>
+<script>
+    function cal() {
+        let a = +document.getElementById('a').value;
+        let b = +document.getElementById('b').value;
+        let c = +document.getElementById('c').value;
+        if (isNaN(a)||isNaN(b)||isNaN(c)||a===0){
+            alert('Không thể tính')
+        }else {
+            let del = (b * b) - (4 * a * c);
+            if (del < 0) {
+                alert('Phương trình vô nghiệm')
+            } else if (del===0){
+                let x = (-1)*b/(2*a);
+                alert('phương trình có nghiệm kép'+ x )
+            } else {
+                let can= Math.sqrt(del);
+                let x1= (-b+can)/(2*a);
+                let x2= (-b-can)/(2*a);
+                alert('phương trình có 2 nghiệm là'+ x1 +' '+'và' +' '+x2)
+            }
+        }
+    }
+
+</script>
+</html>

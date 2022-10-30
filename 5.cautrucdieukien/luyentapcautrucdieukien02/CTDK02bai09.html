@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>kiểm tra cạnh tam giác</title>
+</head>
+<body>
+
+</body>
+<script>
+    let a=+prompt('Nhập vào độ dài cạnh thứ nhất');
+    let b=+prompt('Nhập vào độ dài cạnh thứ hai');
+    let c=+prompt('Nhập vào độ dài cạnh thứ ba');
+    if (a>0&&b>0&&c>0){
+        if ((a+b)>c&&(b+c)>a&&(a+c)>b){
+            alert('ba cạnh này là cạnh của một tam giác')
+        } else {
+            alert('error')
+        }
+    } else {
+        alert('error')
+    }
+</script>
+</html>

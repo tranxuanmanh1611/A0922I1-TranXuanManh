@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Diện tích tam giác vuông</title>
+</head>
+<body>
+
+</body>
+<script>
+    let a = +prompt('Nhập độ dài cạnh góc vuông thứ nhất');
+    let b= +prompt('Nhập độ dài cạnh góc vuông thứ hai');
+    if (isNaN(a)||isNaN(b)||a<=0||b<=0){
+        alert('Không thể tính')
+    } else {
+        let area = a*b*0.5
+        alert('diện tích hình tam giác vuông là'+' '+ area)
+    }
+</script>
+</html>

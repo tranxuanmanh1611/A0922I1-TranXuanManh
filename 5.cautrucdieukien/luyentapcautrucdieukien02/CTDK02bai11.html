@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>tính thuế TNCN</title>
+</head>
+<body>
+
+</body>
+<script>
+    let a = +prompt('Nhập tổng thu nhập chịu thuế (tổng thu nhập trừ cho các khoản miễn) theo năm theo đơn vị ngàn');
+    if (a<=60000000){
+        let cost=a*0.05;
+        alert('thuế TNCN của bạn là'+' '+cost)
+    } else if(a<=120000000){
+        let cost=a*0.1;
+        alert('thuế TNCN của bạn là'+' '+cost)
+    } else if (a<=216000000){
+        let cost=a*0.15;
+        alert('thuế TNCN của bạn là'+' '+cost)
+    }
+</script>
+</html>
