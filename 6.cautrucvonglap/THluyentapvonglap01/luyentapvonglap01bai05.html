@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tổng 20 số dãy fibonacci</title>
+</head>
+<body>
+
+</body>
+<script>
+    let num1;
+    let num2;
+    let nextnum;
+    num1=0;
+    num2=1;
+    let i;
+    i=0;
+    let sumnum;
+    sumnum=1;
+    do {
+        nextnum=num1+num2;
+        sumnum +=nextnum;
+        num1=num2;
+        num2=nextnum;
+        i++
+    } while (i<18)
+    document.write(sumnum)
+</script>
+</html>

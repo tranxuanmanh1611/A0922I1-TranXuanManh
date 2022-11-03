@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>fibonacci</title>
+</head>
+<body>
+
+</body>
+<script>
+    let numb1;
+    let numb2;
+    let nextnum;
+    numb1=0;
+    numb2=1;
+  let count;
+  count=18;
+  let i;
+  document.write(numb1+'<br>');
+  document.write(numb2+'<br>');
+  for (i=0;i<count;i++){
+      nextnum=numb1+numb2;
+      document.write(nextnum+'<br>');
+      numb1=numb2;
+      numb2=nextnum;
+  }
+</script>
+</html>
