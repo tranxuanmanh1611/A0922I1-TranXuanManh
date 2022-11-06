@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tính lãi vay</title>
+</head>
+<body>
+<h1>Lãi suất hiện tại 8% năm</h1>
+<table>
+    <tr>
+        <th>Số tiền</th>
+        <th>Nhập số tháng</th>
+        <th>Số tiền dự tính nhận được</th>
+    </tr>
+    <tr>
+        <td><label><input type="text" placeholder="Nhập số tiền ban đầu" id="money"></label></td>
+        <td><label><input type="text" placeholder="Nhập số tháng bạn muốn gửi" id="month"></label></td>
+        <td id="result"></td>
+    </tr>
+    <tr>
+        <td>
+            <button onclick="cal()">Tính toán</button>
+        </td>
+    </tr>
+</table>
+</body>
+<script>
+
+    function cal() {
+        let money = +document.getElementById('money').value;
+        let month = +document.getElementById('month').value;
+        for (let i = 0; i < month; i++) {
+            money *= (1 + (0.08 / 12))
+        }
+        document.getElementById('result').innerHTML = money;
+    }
+</script>
+</html>

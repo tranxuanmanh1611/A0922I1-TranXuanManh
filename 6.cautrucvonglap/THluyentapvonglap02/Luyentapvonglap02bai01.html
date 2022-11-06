@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>in dãy fibonacci</title>
+</head>
+<body>
+
+</body>
+<script>
+    let num1;
+    let num2;
+    let nextnum;
+    num1=0;
+    num2=1;
+    let i;
+    let count;
+    count=0;
+    let soluong;
+    soluong= +prompt('Bạn cần in ra bao nhiêu số trong dãy fibonacci?')
+        if (soluong===1){
+            document.write(num1);
+        } else if (soluong===2){
+            document.write(num1+'<br>');
+            document.write(num2+'<br>');
+        } else {
+            document.write(num1+'<br>');
+            document.write(num2+'<br>');
+            for (i=0;i<(soluong-2);i++){
+            nextnum=num2+num1;
+            document.write(nextnum+'<br>')
+            num1=num2;
+            num2=nextnum;
+        }
+        }
+
+</script>
+</html>

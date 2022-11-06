@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>in hình chữ nhật</title>
+</head>
+<body>
+
+</body>
+<script>
+    let i;
+    let j;
+    for (i = 0; i < 7; i++) {
+        if (i > 0 && i < 6) {
+            for (j = 0; j < 20; j++) {
+                if (j === 0 || j === 19) {
+                    document.write('*')
+                } else {
+                    document.write('&nbsp&nbsp')
+                }
+            }
+            document.write('<br>')
+        } else {
+            for (j = 0; j < 20; j++) {
+                document.write('*')
+            }
+            document.write('<br>')
+        }
+    }
+</script>
+</html>
