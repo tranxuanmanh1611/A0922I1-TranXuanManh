@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Số nguyên tố</title>
+</head>
+<body>
+
+</body>
+<script>
+    let numbers= +prompt('Cần hiện bao nhiêu số nguyên tố?');
+    let count;
+    let max;
+    let n;
+    let a;
+    count=0;
+    max=2;
+
+    while (count<numbers) {
+        a=0;
+        for (n = 2; n <= max; n++) {
+            if (max % n === 0) {
+                a= a+1
+            }
+        }
+        if (a===1){
+            document.write(max + '<br>')
+            count++;
+        }
+        max++
+    }
+</script>
+</html>
