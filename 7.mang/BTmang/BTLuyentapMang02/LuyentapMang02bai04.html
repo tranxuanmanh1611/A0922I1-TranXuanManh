@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Đếm số từ trong chuỗi</title>
+</head>
+<body>
+
+</body>
+<script>
+    let str = prompt('Nhập vào một chuỗi');
+    let toStr = str.toString();
+    let count = 0;
+    let UPPER = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    let LOWER = 'abcdefghijklmnopqrstuvwxyz';
+    for (let i = 0; i < toStr.length; i++) {
+        if (UPPER.indexOf(toStr[i]) !== -1 || LOWER.indexOf(toStr[i]) !== -1) {
+
+            count++
+        }
+    }
+    alert('Có ' + count + ' kí tự trong chuỗi')
+</script>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tạo và đảo ngược mảng</title>
+</head>
+<body>
+
+</body>
+<script>
+    let arr = [];
+    let i = 0;
+    do {
+        arr[i] = prompt('Nhập vào phần tử mảng, nếu muốn dừng lại thì nhập "stop"')
+        i++
+    } while (arr[i - 1] !== 'stop')
+    arr.pop();
+    arr.reverse();
+    console.log(arr)
+</script>
+</html>

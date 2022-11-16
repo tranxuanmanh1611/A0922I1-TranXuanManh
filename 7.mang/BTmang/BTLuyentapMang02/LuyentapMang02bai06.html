@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tìm và thay thế kí tự -</title>
+</head>
+<body>
+
+</body>
+<script>
+
+    let str = prompt('Nhập vào chuỗi');
+    let arr = []
+    for (let i = 0; i < str.length; i++) {
+        arr[i] = str[i]
+    }
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] === '-') {
+            arr[i] = '_'
+        }
+    }
+    console.log(arr.join());
+    alert(arr.join())
+</script>
+</html>
