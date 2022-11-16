@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tìm giá trị lớn nhất</title>
+</head>
+<body>
+
+</body>
+<script>
+    let input;
+    let dayso = [];
+    do {
+        input = +prompt('Nhập dãy số');
+        dayso.push(input)
+    } while (input !== 0)
+    dayso.pop()
+    console.log(dayso)
+    let max;
+    max = dayso[0]
+    let index;
+    index = 0;
+    let i;
+    for (i = 1; i < dayso.length; i++) {
+        if (dayso[i] > max) {
+            max = dayso[i]
+            index = i
+        }
+        document.write('index ' + i + ': ' + dayso[i] + '<br>')
+    }
+    alert('số lớn nhất trong dãy là ' + max + ' ở vị trí ' + index)
+</script>
+</html>

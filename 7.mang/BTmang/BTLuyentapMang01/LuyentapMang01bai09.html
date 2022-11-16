@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tạo và nối 2 mảng</title>
+</head>
+<body>
+
+</body>
+<script>
+    let arr1 = [];
+    for (let i = 0; i < 10; i++) {
+        arr1[i] = +prompt('Mảng 1 nhập vào số nguyên')
+    }
+
+    let arr2 = [];
+    for (let i = 0; i < 10; i++) {
+        arr2[i] = +prompt('Mảng 2 nhập vào số nguyên')
+    }
+    (function Concat() {
+        let arr3 = arr1.concat(arr2);
+        alert(arr3)
+    }())
+
+</script>
+</html>

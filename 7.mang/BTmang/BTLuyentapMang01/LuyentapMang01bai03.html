@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Khởi tạo mảng số nguyên, hiện max và tính trung bình các phần tử</title>
+</head>
+<body>
+
+</body>
+<script>
+    let numbers = [];
+    let count = +prompt('Bạn muốn nhập bao nhiêu số');
+    for (let i = 0; i < count; i++) {
+        numbers[i] = +prompt('Nhập vào số nguyên bất kì')
+    }
+
+    let max = numbers[0];
+    for (let i = 1; i < numbers.length; i++) {
+        if (max < numbers[i]) {
+            max = numbers[i];
+        }
+    }
+    alert('Giá trị max trong mảng là ' + max);
+    let sum = 0;
+    for (let i = 0; i < numbers.length; i++) {
+        sum += numbers[i]
+    }
+    let average = sum / numbers.length;
+    alert('Trung bình là ' + average)
+</script>
+</html>

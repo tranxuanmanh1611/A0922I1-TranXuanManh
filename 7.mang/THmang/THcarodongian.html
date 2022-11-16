@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cờ ca rô đơn giản</title>
+</head>
+<body>
+<h3>Cờ caro đơn giản</h3>
+<p id="carogame"/>
+</body>
+<script>
+    let b = document.getElementById('carogame');
+    let board = [];
+    let data = '';
+    for (let i = 0; i < 6; i++) {
+        board[i] = ['o', 'o', 'o', 'o', 'o', 'o'];
+    }
+    for (let i = 0; i < 6; i++) {
+        data += '<br>';
+        for (let j = 0; j < 6; j++) {
+            data += board[i][j] + '&nbsp&nbsp&nbsp&nbsp';
+        }
+    }
+    data += '<br><br><button onclick="changevalueX();" value="change value">Bên X</button>&nbsp' +
+        '<button onclick="changevalueO()" value="change value O">Bên O</button>&nbsp' +
+        '<button onclick="regame();" value="regame">Chơi lại</button>'
+    b.innerHTML = data
+
+    function changevalueX() {
+        let hang = +prompt('Hàng số?');
+        let cot = +prompt('Cột số');
+        data = ''
+        board[hang - 1][cot - 1] = 'X'
+        for (let i = 0; i < 6; i++) {
+            data += '<br>'
+            for (let j = 0; j < 6; j++) {
+                data += board[i][j] + '&nbsp&nbsp&nbsp&nbsp';
+            }
+        }
+        data += '<br><br><button onclick="changevalueX();" value="change value">Bên X</button>&nbsp' +
+            '<button onclick="changevalueO()" value="change value O">Bên O</button>' +
+            '<button onclick="regame();" value="regame">Chơi lại</button>   '
+        b.innerHTML = '<hr>' + data
+    }
+
+    function changevalueO() {
+        let hang = prompt('Hàng số?');
+        let cot = prompt('Cột số');
+        data = ''
+        board[hang - 1][cot - 1] = 'O'
+        for (let i = 0; i < 6; i++) {
+            data += '<br>'
+            for (let j = 0; j < 6; j++) {
+                data += board[i][j] + '&nbsp&nbsp&nbsp&nbsp';
+            }
+        }
+        data += '<br><br><button onclick="changevalueX();" value="change value">Bên X</button>&nbsp' +
+            '<button onclick="changevalueO()" value="change value O">Bên O</button>' +
+            '<button onclick="regame();" value="regame">Chơi lại</button>'
+        b.innerHTML = '<hr>' + data
+    }
+
+    function regame() {
+        let b = document.getElementById('carogame');
+        let board = [];
+        let data = '';
+        for (let i = 0; i < 6; i++) {
+            board[i] = ['o', 'o', 'o', 'o', 'o', 'o'];
+        }
+        for (let i = 0; i < 6; i++) {
+            data += '<br>';
+            for (let j = 0; j < 6; j++) {
+                data += board[i][j] + '&nbsp&nbsp&nbsp&nbsp';
+            }
+        }
+        data += '<br><br><button onclick="changevalueX();" value="change value">Bên X</button>&nbsp' +
+            '<button onclick="changevalueO()" value="change value O">Bên O</button>&nbsp' +
+            '<button onclick="regame();" value="regame">Chơi lại</button>'
+        b.innerHTML = data
+    }
+</script>
+</html>

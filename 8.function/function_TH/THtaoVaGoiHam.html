@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Thực hành tạo và gọi hàm</title>
+</head>
+<body>
+
+</body>
+<script>
+    /* Cái này mình bỏ thẳng tham số vào luôn
+    let answer = confirm('Chơi một ván nhé?');
+
+    (function processComfirm() {
+  let result="";
+        if (answer){
+      result = "Tuyệt, chơi thôi"
+  }else {
+            result= "Thôi để khi khác"
+        }
+        alert(result)
+    })()*/
+
+    /* làm theo ví dụ trong bài giảng*/
+
+    function replyTo(answer) {
+        let result =""
+        if (answer) {
+            result = "tuyệt chơi thôi"
+        } else {
+            result = "thôi để khi khác"
+        }
+        return result;
+    }
+
+    let question = confirm('Chơi một ván nhé?');
+    let theAnswer = replyTo(question);
+    alert(theAnswer)
+</script>
+</html>

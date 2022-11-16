@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bao nhiêu số nguyên >= 10 (Phần tử không lặp)</title>
+</head>
+<body>
+
+</body>
+<script>
+    let arr = []
+    for (let i = 0; i < 10; i++) {
+        arr[i] = +prompt('Nhập vào 10 số nguyên khác nhau');
+
+        (function Kiemtra() {
+            let check = arr.slice(0, i);
+            for (let j = 0; j < check.length; j++) {
+                while (check[j] === arr[i]) {
+                    arr[i] = +prompt('bị lặp số ' + arr[i] + ' hãy nhập lại')
+                }
+            }
+
+        }())
+
+
+
+    }
+
+    console.log(arr)
+    let max = arr[0];
+    for (let i = 1; i < arr.length; i++) {
+        if (arr[i] > max) {
+            max = arr[i];
+        }
+    }
+    alert('max là ' + max + ' ở vị trí ' + arr.indexOf(max))
+
+</script>
+</html>

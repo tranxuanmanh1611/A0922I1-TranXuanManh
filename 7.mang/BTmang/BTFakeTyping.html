@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>FakeTyping</title>
+</head>
+<body style="alignment: center">
+<center>
+    <h1>Type anthing slowly</h1>
+
+<form name="f">
+    <textarea rows="10" cols="40" name="txt" id="txt" onkeydown="typea()"></textarea><label for="txt"></label>
+</form>
+
+</center>
+</body>
+<script>
+    let a = 'TÔI LÀ MỘT ĐỨA TRẺ';
+    let str = a.toString();
+    let b = '';
+
+    function typea() {
+        let t = document.f.txt.value;
+        let j = t.length;
+        if (j > 0)
+        {
+            for (let i = 0; i < j; i++)
+            {
+
+                b = b + str[i]
+                if (i == 18)
+                {
+                    document.f.txt.value="";
+                    b ="";
+                }
+            }
+        }
+        document.f.txt.value=b;
+        b="";
+         setTimeout("typea()", 1);
+         //return false
+    }
+
+</script>
+</html>

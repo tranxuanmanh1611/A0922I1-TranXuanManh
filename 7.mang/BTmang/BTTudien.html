@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Từ điển</title>
+</head>
+<body>
+<input type="text" id="word" name="word" placeholder="Nhập từ cần tra ở đây"><label for="word"></label>
+<button type="button" onclick="dich();">Tìm kiếm</button>
+<h3 id="result"></h3>
+</body>
+<script>
+    let english = ['friend', 'family', 'brother'];
+    let vietnamese = ['bạn bè', 'Gia đình', 'anh em'];
+
+    function dich() {
+        let word = document.getElementById('word').value;
+        let result;
+        if (english.indexOf(word) !== -1) {
+            result = vietnamese[english.indexOf(word)];
+            document.getElementById('result').innerHTML = result
+        } else {
+            alert('Không tìm thấy')
+        }
+    }
+
+</script>
+</html>

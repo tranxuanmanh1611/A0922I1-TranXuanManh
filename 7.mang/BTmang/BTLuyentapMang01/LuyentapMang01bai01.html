@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bao nhiêu số nguyên >= 10</title>
+</head>
+<body>
+
+</body>
+<script>
+    let arr = [];
+    for (let i = 0; i < 10; i++) {
+        arr[i] = +prompt('Nhập vào số nguyên')
+    }
+    let countBigger = 0;
+    for (let i = 0; i < 10; i++) {
+        if (arr[i] >= 10) {
+            countBigger++
+        }
+    }
+    alert('Có ' + countBigger + ' số lớn hơn hoặc bằng 10')
+</script>
+</html>

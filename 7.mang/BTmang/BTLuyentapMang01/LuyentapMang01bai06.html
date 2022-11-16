@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tìm phần tử</title>
+</head>
+<body>
+
+</body>
+<script>
+    let arr = [];
+    for (let i = 0; i < 10; i++) {
+        arr[i] = +prompt('nhập vào số nguyên')
+    }
+
+    (function kiemtra() {
+        let V = +prompt('Nhập vào số cần kiểm tra');
+        if (arr.indexOf(V) !== -1) {
+            alert('Phần tử ' + V + ' có ở trong mảng')
+        } else {
+            alert('Phần tử ' + V + ' không có ở trong mảng')
+        }
+    }())
+</script>
+</html>

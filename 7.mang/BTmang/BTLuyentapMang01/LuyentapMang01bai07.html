@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tìm phần tử và xóa khỏi mảng</title>
+</head>
+<body>
+<script>
+    let arr = [];
+    for (let i = 0; i < 10; i++) {
+        arr[i] = +prompt('nhập vào số nguyên')
+    }
+
+    (function FindandDelete() {
+        let V = +prompt('Nhập vào số cần kiểm tra');
+        if (arr.indexOf(V) !== -1) {
+            alert('Phần tử ' + V + ' có ở trong mảng');
+            arr.splice(arr.indexOf(V), 1, ' ')
+        } else {
+            alert('Phần tử ' + V + ' không có ở trong mảng')
+        }
+    }())
+    console.log(arr);
+</script>
+</body>
+</html>

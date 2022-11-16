@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tìm giá trị lớn nhất trong mảng</title>
+</head>
+<body>
+
+</body>
+<script>
+    let arr=[];
+    let Phantu;
+    do {
+        Phantu = +prompt('Nhập phần tử vào mảng');
+        arr.push(Phantu)
+    }while (Phantu !=false)
+arr.pop();
+    (function findMin() {
+let min=arr[0]
+        for (let i=1;i<arr.length;i++){
+            if (arr[0]>arr[i]){
+                min=arr[i]
+            }
+        }
+        alert(min+' là giá trị nhỏ nhất trong mảng và nó nằm ở vị trí '+ arr.indexOf(min))
+    })()
+
+</script>
+</html>

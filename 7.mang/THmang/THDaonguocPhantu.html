@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Đảo ngược phần tử trong mảng</title>
+</head>
+<body>
+<label><input type="text" placeholder="Nhập phần tử" id="element"></label>
+<button onclick="add_element();">Add</button>
+<button onclick="display_element();">Display</button>
+<button onclick="reverse();">Đảo ngược</button>
+<button onclick="sortmaxmin()">xếp từ lớn đến nhỏ</button>
+<br><p id="result"></p>
+</body>
+<script>
+    let x; x=0;
+    let Array; Array=[];
+    function add_element() {
+Array[x]= document.getElementById('element').value;
+alert('Đã nhập thành công phần tử '+Array[x]+' tại index '+x);
+x++;
+document.getElementById('element').innerHTML=" "
+    }
+
+function display_element() {
+let i;
+let e;e='<hr>'
+    for (i=0;i<Array.length;i++){
+        e += Array[i]+'<br>'
+    }
+    document.getElementById('result').innerHTML=e
+}
+
+function reverse() {
+let first; first=0;
+let last; last=Array.length -1;
+while (first<last){
+    let b;b=Array[first];
+    Array[first]=Array[last];
+    Array[last]=b;
+    first++;
+    last--;
+}
+    alert('Đã sắp xếp, hãy ấn nút Display để hiển thị')
+}
+
+function sortmaxmin() {
+Array.sort(function (a,b) {
+return b - a
+})
+    alert('Đã sắp xếp, hãy ấn nút Display để hiển thị')
+}
+</script>
+</html>

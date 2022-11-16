@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chuyển độ F sang C</title>
+</head>
+<body>
+<h1>Chuyển đổi nhiệt độ</h1>
+<h2>Nhập giá trị vào vùng chỉ nhiệt độ Fahrenheit để chuyển sang độ Celcius</h2>
+<span>Fahrenheit: &nbsp;&nbsp;&nbsp;</span><input type="number" id="Fahrenheit" placeholder="Nhập vào đây"
+oninput="temperatureConvert(this.value)" onchange="temperatureConvert(this.value)"><label
+        for="Fahrenheit"></label>
+<br><span>Celcius:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span id="result"> </span>
+</body>
+<script>
+        function temperatureConvert(a) {
+       document.getElementById('result').innerHTML= (a-32)/1.8;
+    }
+
+
+</script>
+</html>
