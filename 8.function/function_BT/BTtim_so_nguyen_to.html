@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tìm số nguyên tố</title>
+</head>
+<body>
+<p id="result"> </p>
+<p id="result2"> </p>
+</body>
+<script>
+    let answer= +prompt('Bạn cần tìm các số nguyên tố giới hạn tới số?vd: tới 10000');
+    isPrime(answer)
+
+    function isPrime(number) {
+        let arr = [];
+        let j = 0;
+        for (let n = 2; n <= number; n++) {
+            let count = 0;
+            for (let i = 2; i <= n; i++) {
+                if (n % i === 0) {
+                    count++
+                }
+            }
+            if (count < 2) {
+                arr[j] = n;
+                j++
+            }
+        }
+        document.getElementById('result').innerHTML='<h3>' + 'từ 0-' + answer + ' có ' + arr.length + ' số nguyên tố:<br>' + '</h3>'
+        for (let j = 0; j < arr.length; j++) {
+            document.write(arr[j]+'<br>')
+        }
+        console.log(arr)
+    }
+
+
+</script>
+</html>

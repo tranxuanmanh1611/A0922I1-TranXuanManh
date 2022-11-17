@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chuyển giữa feet và m</title>
+</head>
+<body>
+<form>
+    <table>
+        <tr>
+            <th>in</th>
+            <th>from</th>
+            <th>out</th>
+            <th>to</th>
+        </tr>
+        <tr>
+            <td><input type="number" oninput="meter2foot(this.value)" placeholder="từ m sang ft"></td>
+            <td>meters</td>
+            <td>=</td>
+            <td><span id="result1"></span></td>
+            <td>feets</td>
+        </tr>
+        <tr>
+            <td><input type="number" oninput="foot2meter(this.value)" placeholder="từ ft sang m"></td>
+            <td>feets</td>
+            <td>=</td>
+            <td><span id="result2"></span></td>
+            <td>meters</td>
+        </tr>
+    </table>
+</form>
+</body>
+<script>
+    function meter2foot(meter) {
+        let foot;
+       foot = 3.279 * meter
+        document.getElementById('result1').innerHTML=foot
+    }
+
+    function foot2meter(foot) {
+        let meter;
+        meter = 0.305 * foot
+        document.getElementById('result2').innerHTML=meter
+    }
+
+</script>
+</html>
