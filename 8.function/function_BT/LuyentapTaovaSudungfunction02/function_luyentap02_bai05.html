@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>tra ve so nguyen nho nhat</title>
+</head>
+<body>
+
+</body>
+<script>
+    let numberInput = [];
+    for (let i = 0; i < 3; i++) {
+        numberInput[i] = +prompt('Nhap vao mot so sao cho du 3 so, chuong trinh se tra ve so co gia tri nho nhat trong 3 so');
+    }
+    FindMin(numberInput[0], numberInput[1], numberInput[2])
+
+    function FindMin(a, b, c) {
+        let min = a;
+        if (b < a) {
+            if (b < c) {
+                min = b;
+            } else {
+                min = c
+            }
+        }
+        alert('Min la ' + min)
+    }
+</script>
+</html>

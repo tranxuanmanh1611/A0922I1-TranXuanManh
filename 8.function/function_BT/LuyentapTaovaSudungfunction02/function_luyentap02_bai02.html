@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Diện tích/chu vi hình tròn</title>
+</head>
+<body>
+<script>
+    let r = +prompt('Nhập bán kính hình tròn?');
+
+</script>
+<h2 id="dien_tich"></h2>
+<h2 id="chu_vi"></h2>
+</body>
+<script>
+    function Dien_tich(r) {
+        dien_tich = 3.14 * r * r;
+        document.getElementById('dien_tich').innerHTML = 'Diện tích của hình tròn là: ' + dien_tich;
+    }
+
+    Dien_tich(r);
+
+
+    function Chu_vi(r) {
+        chu_vi = 2 * 3.14 * r;
+        document.getElementById('chu_vi').innerHTML = 'Chu vi của hình tròn là: ' + chu_vi;
+    }
+
+    Chu_vi(r);
+</script>
+</html>

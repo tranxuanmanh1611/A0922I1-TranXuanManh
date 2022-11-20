@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>kiem tra so nguyen duong</title>
+</head>
+<body>
+
+</body>
+<script>
+    let numberInput = +prompt('Nhap vao mot so');
+    Kiem_tra_so_nguyen_duong(numberInput);
+    console.log()
+
+    function Kiem_tra_so_nguyen_duong(a) {
+        if (Number.isInteger(a)) {
+            if (a > 0) {
+                alert('true')
+            } else {
+                alert('false')
+            }
+        } else {
+            alert('false')
+        }
+    }
+</script>
+</html>
