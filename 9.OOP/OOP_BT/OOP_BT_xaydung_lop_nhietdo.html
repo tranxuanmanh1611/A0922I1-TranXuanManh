@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lớp nhiệt độ</title>
+</head>
+<body>
+
+</body>
+<script>
+    class Temperature {
+        constructor(C) {
+            if (C > -273) {
+                this.C = C;
+            }
+
+        }
+
+        getC() {
+            return this.C
+        }
+
+        setC(value) {
+            if (value > -273) {
+                this.C = value;
+            }
+
+        }
+
+        getCtoF() {
+            return (this.C * 1.8) + 32;
+        }
+
+        getCtoKevin() {
+            return this.C + 273.15;
+        }
+
+        alertOut() {
+            alert('Độ F: ' + this.getCtoF() + ' và độ K: ' + this.getCtoKevin())
+        }
+    }
+
+    let temperature = new Temperature(25);
+    temperature.alertOut();
+
+</script>
+</html>
