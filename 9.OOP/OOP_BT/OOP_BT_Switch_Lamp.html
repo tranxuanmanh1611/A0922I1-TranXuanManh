@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Công tắc và bóng đèn</title>
+</head>
+<body>
+
+</body>
+<script>
+    class SwitchButton {
+        constructor(name) {
+            this.name = name;
+            this.status = 'off';
+            this.connect = 'unconnected';
+        }
+
+        setStatus(value) {
+            this.status = value;
+        }
+
+        setConnect(value) {
+            this.connect = value
+        }
+
+        connectToLamp(toLamp) {
+            this.connect = 'connected';
+            console.log(' đã nối ' + this.name + ' với ' + toLamp.name);
+            toLamp.connect = 'connected'
+        }
+
+        SwitchOn() {
+            if (this.status === 'off') {
+                if (this.connect === 'unconnected') {
+                    console.log(this.name + ' đã bật, nhưng chưa kết nối với đèn, vui lòng kết nối')
+                    this.setStatus('on')
+                } else {
+                    console.log(this.name + ' đã bật, đã kết nối với đèn')
+                    this.setStatus('on')
+                }
+            } else {
+                if (this.connect === 'unconnected') {
+                    console.log(this.name + ' đã bật sẵn, nhưng chưa kết nối với đèn, vui lòng kết nối')
+                } else {
+                    console.log(this.name + ' đã bật sẵn, đã kết nối với đèn')
+                }
+            }
+        }
+
+        SwitchOff() {
+            if (this.status === 'off') {
+                console.log(this.name + ' đã tắt sẵn')
+            } else {
+                this.setStatus('off')
+                console.log(this.name + ' đã tắt')
+            }
+        }
+    }
+
+    class Lamp {
+        constructor(name) {
+            this.name = name;
+            this.status = 'off';
+            this.connect = 'unconnected'
+        }
+        setStatus(value){
+            this.status=value;
+        }
+turnOn(){
+            if(this.connect==='unconnected'){
+                console.log('Công tắc chưa được kết nối với '+this.name)
+            } else {
+                this.setStatus('on');
+                console.log(this.name+' đang sáng');
+            }
+}
+    }
+
+    let congtac = new SwitchButton('CÔNG TẮC');
+    let bongden = new Lamp('Đèn rạng đông');
+    let bongden2 = new Lamp('Đèn sumsang');
+    congtac.connectToLamp(bongden2)
+    congtac.connectToLamp(bongden)
+bongden.turnOn(congtac)
+    console.log(congtac, bongden, bongden2)
+</script>
+</html>

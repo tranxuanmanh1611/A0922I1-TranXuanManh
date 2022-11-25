@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Xây dựng lớp date()</title>
+</head>
+<body>
+
+</body>
+<script>
+    class MyDate {
+        constructor(date, month, year) {
+            this.date = date;
+            this.month = month;
+            this.year = year;
+        }
+
+        getDay() {
+            return this.date;
+        }
+
+        getMonth() {
+            return this.month;
+        }
+
+        getYear() {
+            return this.year;
+        }
+        setDay(value) {
+            if (value >= 1 && value <= 31) {
+                this.date = value;
+            } else {
+                this.date = 'Nhập sai ngày'
+            }
+        }
+
+        setMonth(value) {
+            if (value >= 1 && value <= 12) {
+                this.month = value;
+            } else {
+                this.month = 'Nhập sai tháng'
+            }
+        }
+
+        setYear(value) {
+            if (value >= 1900 && value <= 9999) {
+                this.year = value;
+            } else {
+                this.year = 'Nhập sai năm'
+            }
+        }
+
+        Date(date, month, year) {
+            this.setDay(date);
+            this.setMonth(month);
+            this.setYear(year);
+        }
+        resetDate(){
+            this.setDay(0);
+            this.setMonth(0);
+            this.setYear(0);
+        }
+        toString(){
+return this.date+'/'+this.month+'/'+this.year
+        }
+
+    }
+
+    let birth = new MyDate(1,1,2022);
+alert(birth.toString())
+
+</script>
+</html>

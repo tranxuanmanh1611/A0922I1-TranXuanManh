@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ứng dụng gởi tin nhắn</title>
+</head>
+<body>
+
+</body>
+<script>
+    /*function Mobile(id, name) {
+        this.id = id;
+        this.name = name;
+        this.message = "";
+        this.setMessage = function (message) {
+            this.message = message;
+        }
+        this.getMessage = function () {
+            return this.message;
+        }
+        this.sendMessage = function (message, mobile) {
+            mobile.setMessage(message);
+        }
+    }
+
+    let iphone = new Mobile(1, 'iphone');
+    console.log(iphone)
+    let samsung = new Mobile(2, 'samsung');
+    console.log(samsung)
+    iphone.sendMessage('tôi là iphone đây', samsung)
+    console.log(samsung)
+    iphone.sendMessage('iphone gởi cho chính nó', iphone);
+    console.log(iphone)*/
+    class Mobile {
+        constructor(id, name) {
+            this.id = id;
+            this.name = name;
+            this.message = '';
+        }
+
+        getMessage() {
+            return this.message;
+        }
+
+        setMessage(value) {
+            this.message = value;
+        }
+
+        sendMessage(message, toMobile) {
+            toMobile.setMessage(message);
+        }
+    }
+
+    let iphone = new Mobile(1, 'iphone_8plus');
+    let samsung = new Mobile(2, 'samsung_j8');
+    iphone.sendMessage('Xin chào samsung', samsung);
+    console.log(iphone, samsung);
+
+
+</script>
+</html>

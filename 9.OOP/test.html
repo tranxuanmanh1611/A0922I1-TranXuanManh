@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="game">
+</div>
+<script src="suppermen.jpg"></script>
+<script>    function Hero(image, top, left, size, speed) {
+    this.image = image;
+    this.top = top;
+    this.left = left;
+    this.size = size;
+    this.speed = speed;
+    this.getHeroElement = function () {
+        return '<img width="' + this.size + '"' +
+            ' height="' + this.size + '"' +
+            ' src="' + this.image + '"' +
+            ' style="top: ' + this.top + 'px; left:' + this.left + 'px;position:absolute;" />';
+    };
+    this.moveRight = function () {
+        this.left += 30;
+        console.log('ok: ' + this.left);
+    };
+    this.moveDown = function () {
+        this.top += 30;
+        console.log('ok: ' + this.top);
+    };
+    this.moveLeft = function () {
+        this.left -= 30;
+        console.log('ok: ' + this.left);
+    }
+    this.moveUp = function () {
+        this.top -= 30;
+        console.log('ok: ' + this.top);
+    }
+}
+var hero = new Hero('https://scontent.fdad3-4.fna.fbcdn.net/v/t39.30808-6/316174737_1873029576361406_6297733317886944060_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=730e14&_nc_ohc=5Qlrjelpj2MAX_sDU8p&tn=J4h0Wt0JGjSmGASq&_nc_ht=scontent.fdad3-4.fna&oh=00_AfAaq3Qqa27miDIl-2EwrhBoAVgB4wE1cK-fzQMSIhUipA&oe=637F9EEB', 20, 30, 200);
+function start() {
+    if (hero.left < window.innerWidth - hero.size && hero.top == 20) {
+        hero.moveRight();
+    } else if (hero.left > window.innerWidth - hero.size && window.innerHeight - hero.size > hero.top) {
+        hero.moveDown();
+    } else if (window.innerHeight - hero.size < hero.top) {
+        hero.moveLeft();
+    }
+    if (hero.left <30) {
+        hero.moveUp();
+    }
+    document.getElementById('game').innerHTML = hero.getHeroElement();
+    setTimeout(start, 100)
+}
+start();
+</script>
+</body>
+</html>

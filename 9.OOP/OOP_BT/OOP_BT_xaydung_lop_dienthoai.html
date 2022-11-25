@@ -8,9 +8,115 @@
 
 </body>
 <script>
-    class Mobile{
-        constructor(battery,) {
+    class Mobile {
+        constructor(name, battery, composingMess, inbox, sended) {
+            this.name = name;
+            this.battery = battery;
+            this.composingMess = composingMess;
+            this.inbox = inbox;
+            this.sended = sended
         }
+
+        setComposing(value) {
+            this.composingMess = value;
+        }
+
+        setInbox(value) {
+
+            this.inbox = value;
+        }
+
+        setSended(value) {
+            this.sended = value;
+        }
+
+        getComposing() {
+            return this.composingMess;
+        }
+
+        getInbox() {
+            return this.inbox;
+        }
+
+        getSended() {
+            return this.sended;
+        }
+
+        checkBattery() {
+            if (this.battery > 0) {
+                alert(this.name + ' còn pin')
+            } else {
+                this.name + ' hết pin'
+            }
+        }
+
+        decreaseEngergy() {
+            if (this.battery > 0) {
+                this.battery--;
+            }
+        }
+
+        checkStatus() {
+            if (this.status) {
+                alert(this.name + ' đang mở')
+            } else {
+                alert(this.name + ' đang tắt')
+            }
+        }
+
+        turnOn() {
+            this.status = true
+        }
+
+        turnOff() {
+            this.status = false
+        }
+
+        Charge() {
+            if (this.battery < 100) {
+                alert('Đang sạc ' + this.name);
+                this.battery = 100;
+                if (this.battery === 100) {
+                    alert('đã sạc xong')
+                }
+            } else {
+                alert(this.name + ' đã đầy pin')
+            }
+        }
+
+        sendMessage(message, toMobile) {
+            if(this.status){
+                toMobile.setInbox(message);
+                this.setSended(message);
+                alert(toMobile.name + ' có tin nhắn từ ' + this.name);
+                this.battery--;
+            }else {alert(this.name+' chưa được mở')}
+
+        }
+
+        readInbox() {
+            if(this.status){
+                alert('Tin nhắn vừa nhận: ' + this.getInbox());
+                this.battery--
+            }else {alert(this.name+' chưa được mở')}
+
+        }
+
+        readSend() {
+            if(this.status){
+                alert('Tin vừa gởi đi: ' + this.getSended());
+                this.battery--
+            }else {alert(this.name+' chưa được mở')}
+
+        }
+
     }
+
+    let iphone = new Mobile('iphone_8plus', 100, [], [], []);
+    let samsung = new Mobile('samsung_j8', 100, [], [], []);
+
+    console.log(iphone);
+    console.log(samsung);
+
 </script>
 </html>

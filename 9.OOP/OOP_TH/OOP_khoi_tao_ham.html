@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Khởi tạo hàm</title>
+</head>
+<body>
+
+</body>
+<script>
+    /* SỬ DỤNG HÀM
+    function Apple(type) {
+        this.type = type;
+        this.color = 'red';
+        this.getInfor = function
+            getAppleInfo() {
+            return this.color + ' ' + this.type + ' apple'
+        }
+        ;
+    }
+
+    let apple = new Apple('macintosh');
+    apple.color = 'reddish';
+    alert(apple.getInfor())*/
+
+    /*SỬ DỤNG THUỘC TÍNH PROTOTYPE
+
+    function Apple(type) {
+        this.type = type;
+        this.color = 'red';
+        Apple.prototype.getInfor = function
+            getAppleInfo() {
+            return this.color + ' ' + this.type + ' apple'
+        }
+        ;
+    }
+
+    let apple = new Apple('macintosh');
+    apple.color = 'reddish';
+    alert(apple.getInfor())*/
+
+    /*SỬ DỤNG OBJECT LITERAL
+    let apple={
+        type: 'macintosh',
+        color: 'reddish',
+        getInfor: function(){
+            return this.color+' '+this.type+' apple';
+    }
+    }
+    apple.color='red';
+    alert(apple.getInfor())*/
+
+    function Student(id,name,address) {
+        this.id = id;
+        this.name = name;
+        this.address = address;
+        this.ahihi = function () {
+            return 'id: ' + this.id + ' name: ' + this.name + ' address:' + this.address;
+        }
+    }
+
+    let student1 = new Student(1, 'Tran Xuan Manh', 'Danang');
+    alert(student1.ahihi())
+</script>
+</html>

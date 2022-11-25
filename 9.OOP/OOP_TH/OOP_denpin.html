@@ -9,6 +9,10 @@
 </body>
 <script>
     class Battery {
+        constructor(energy) {
+            this.energy = energy;
+        }
+
         setEnergy(energy) {
             this.energy = energy;
         }
@@ -22,10 +26,50 @@
                 this.energy--;
             }
         }
-    };
-
-    class Flashlamp{
-        
     }
+
+    class flashLamp {
+        constructor(battery) {
+            this.battery = battery;
+        }
+
+        setBattery(value) {
+            this.battery = value;
+        }
+
+        getBatteryInfo() {
+            return this.battery.getEnergy();
+        }
+
+        CheckOnOff() {
+            if (this.status) {
+                alert('đang mở')
+            } else {
+                alert('đang tắt')
+            }
+        }
+
+        turnOn() {
+            this.status = true;
+            battery--
+        }
+
+        turnOff() {
+            this.status = false;
+        }
+    }
+
+    let battery = new Battery();
+    battery.setEnergy(10);
+    let lamp = new flashLamp();
+    lamp.setBattery(battery);
+
+    document.write("Battery info:" + lamp.getBatteryInfo() + "<br/>");
+    lamp.turnOn();
+    lamp.CheckOnOff();
+
+
+
+
 </script>
 </html>
