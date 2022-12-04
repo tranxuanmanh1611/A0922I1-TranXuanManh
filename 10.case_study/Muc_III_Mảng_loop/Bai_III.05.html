@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Order món</title>
+</head>
+<body>
+<h2>MENU</h2>
+<p id="display"></p>
+</body>
+<script>
+
+    let drinks = [
+        'Cafe',
+        'Cam vắt',
+        'Nước ép cà rốt',
+        'Nước ép cà chua',
+        'Nước lọc',
+        'Nước dừa'];
+    let price = [12000,25000,22000,22000,5000,25000];
+    (function Menu() {
+        let menu = '';
+        for (let i = 0; i < drinks.length; i++) {
+            menu += (i + 1) + '.' + drinks[i] + '<br>'
+        }
+        menu += '<br><button onclick="order()">Bắt đầu order</button>';
+        document.getElementById('display').innerHTML = menu;
+    }())
+
+    function order() {
+        let cost = 0;
+        do {
+            var drink = +prompt('Bạn muốn uống gì? Hãy nhập số tương ứng với số thứ tự trong thực đơn')
+            var amount;
+            for (let i = 0; i < drinks.length; i++) {
+                if (drink === i + 1) {
+                    amount = +prompt('Bạn vừa chọn ' + drinks[i] + ' giá ' + price[i] + '/ly,bạn muốn đặt bao nhiêu ly?');
+                    cost += amount * price[i];
+                    alert('Tổng bill là '+cost)
+                }
+            }
+            if (drink===7){alert('Kết thúc order, tổng bill là '+cost+', vui lòng thanh toán qua ứng dụng')}
+        } while (drink !== 7)
+    }
+</script>
+</html>

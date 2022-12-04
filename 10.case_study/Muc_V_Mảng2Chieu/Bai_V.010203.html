@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>tạo mảng 2 chiều,hàm tổng số chẵn,đếm số nguyên tố,tìm minmax</title>
+</head>
+<body>
+
+</body>
+<script>
+    let arr = [];
+
+    function Create_Array(r, c) {
+        for (let i = 0; i < r; i++) {
+            arr.push([]);
+            for (let j = 0; j < c; j++) {
+                arr[i][j] = (i + 1) * (j + 1);
+            }
+        }
+        return arr;
+    }
+
+    Create_Array(+prompt('Nhập số hàng'), +prompt('Nhập số cột'));
+
+    (function Sum_even_number() {
+        let sum = 0;
+        for (let i = 0; i < arr.length; i++) {
+            for (let j = 0; j < arr[i].length; j++) {
+                if (arr[i][j] % 2 === 0) {
+                    sum += arr[i][j];
+                }
+            }
+        }
+        alert('Tổng các số chẵn trong mảng là ' + sum)
+    }())
+    console.log(arr)
+
+    function Find_prime(a) {
+        let arrPrime = [];
+        for (let i = 0; i < a.length; i++) {
+            for (let j = 0; j < a[i].length; j++) {
+                let count = 0;
+                for (let n = 1; n <= a[i][j]; n++) {
+                    if (a[i][j] % n === 0) {
+                        count++
+                    }
+                }
+                if (count === 2) {
+                    arrPrime.push(a[i][j]);
+                }
+            }
+        }
+        let arrPrime2 = [];
+        arrPrime2[0] = arrPrime[0];
+        for (let i = 0; i < arrPrime.length; i++) {
+            if (arrPrime2.indexOf(arrPrime[i]) === -1) {
+                arrPrime2.push(arrPrime[i])
+            }
+        }
+        alert('Có ' + arrPrime2.length + ' số nguyên tố trong mảng,là: ' + arrPrime2)
+    }
+
+    Find_prime(arr);
+
+    function Find_minmax(a) {
+        let max = a[0][0];
+        let min = a[0][0];
+        for (let i = 0; i < a.length; i++) {
+            for (let j = 0; j < a[i].length; j++) {
+                if (a[i][j] > max) {
+                    max = a[i][j];
+                }
+                if (a[i][j] < min) {
+                    min = a[i][j];
+                }
+            }
+        }
+        alert('Min là: ' + min + ' và Max là: ' + max);
+    }
+
+    Find_minmax(arr);
+</script>
+</html>

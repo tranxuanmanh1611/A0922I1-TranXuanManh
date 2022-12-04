@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Prefix Sum</title>
+</head>
+<body>
+
+</body>
+<script>
+    let amount = +prompt('Bạn muốn mảng có bao nhiêu phần tử?');
+
+    CreateArray(amount, arrA = [])
+
+    function CreateArray(n, arr1) {
+        for (let i = 0; i < n; i++) {
+            arr1[i] = +prompt('Nhập vào phẩn tử thứ ' + (i + 1))
+        }
+        alert('Bạn đã tạo xong mảng arrA: ' + arr1)
+    }
+
+    let arrB = [];
+
+    function PrefixSum(arr1, arr2) {
+        let sum = 0;
+        for (let i = 0; i < arr1.length; i++) {
+            sum += arr1[i];
+            arr2[i] = sum
+        }
+        alert('PrefixSum của arrA bạn vừa tạo là: ' + arr2)
+    }
+
+    PrefixSum(arrA, arrB)
+    console.log(arrB)
+</script>
+</html>

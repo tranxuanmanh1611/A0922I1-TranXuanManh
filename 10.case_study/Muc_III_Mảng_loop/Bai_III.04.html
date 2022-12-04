@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Đọc số thành chữ</title>
+</head>
+<body>
+
+</body>
+<script>
+    let numberIn = prompt('Nhập vào một dãy số để chuyển sang chữ')
+    NumberToABC(numberIn);
+
+    function NumberToABC(num) {
+        let numbers = '0123456789'
+        let abc = [' không ', ' một ', ' hai ', ' ba ', ' bốn ', ' năm ', ' sáu ', ' bảy ', ' tám ', ' chín ']
+        for (let i = 0; i < num.length; i++) {
+            document.write(abc[numbers.indexOf(num[i])])
+        }
+
+    }
+</script>
+</html>

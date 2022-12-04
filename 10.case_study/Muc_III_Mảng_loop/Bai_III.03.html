@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tìm index tạo ra phân số lớn nhất</title>
+</head>
+<body>
+
+</body>
+<script>
+    let numerators = [5, 2, 5, 6];
+    let denominators = [6, 3, 4, 1];
+
+    /*arr1 là mảng chứa phân tử là số chia, arr2 là mảng chứa phần tử là số bị chia*/
+    function MaxFraction(arr1, arr2) {
+        let max = arr1[0] / arr2[0];
+        let index = 0
+        for (let i = 1; i < arr1.length; i++) {
+            if (arr1[i] / arr2[i] > max) {
+                max = arr1[i] / arr2[i];
+                index = i
+            }
+        }
+        alert('Ví số ' + index + ' của 2 mảng chứa cặp phần tử tạo thành phân số lớn nhất')
+    }
+
+    MaxFraction(numerators, denominators)
+</script>
+</html>

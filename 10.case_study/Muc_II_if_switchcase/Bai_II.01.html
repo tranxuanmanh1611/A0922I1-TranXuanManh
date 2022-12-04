@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tính thuế thu nhập</title>
+</head>
+<body>
+
+</body>
+<script>
+    let salary= +prompt('Nhập lương của bạn?');
+    let netSalary=Tax(salary);
+    alert('Lương sau thuế bạn nhận được là: '+netSalary+' VND');
+    function Tax(money) {
+        let netIncome;
+        if (money > 15000000) {
+            return netIncome = money * 0.8
+        } else if (money >= 7000000) {
+            return netIncome = money * 0.9
+        } else {
+            return netIncome = money * 0.95
+        }
+    }
+</script>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kiểm tra nguyên âm</title>
+</head>
+<body>
+
+</body>
+<script>
+    let textIn = prompt('Nhập vào một kí tự');
+    let answer = FindVowel(textIn);
+
+    function FindVowel(text) {
+        let lowerCase = 'bcdfjhjklmnpqrstvwxyz';
+        let upperCase = 'BCDFJHJKLMNPQRSTVWXYZ';
+        let lowerCaseVowel = 'ouiae';
+        let upperCaseVowel = 'OUIAE';
+        if (lowerCaseVowel.indexOf(text) !== -1 || upperCaseVowel.indexOf(text) !== -1) {
+            alert('Đây là nguyên âm')
+        } else if (lowerCase.indexOf(text) !== -1 || upperCase.indexOf(text) !== -1) {
+            alert('Đây là phụ âm')
+        } else {
+            alert('Đây không phải chữ cái')
+        }
+
+    }
+</script>
+</html>

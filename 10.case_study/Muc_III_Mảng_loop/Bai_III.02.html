@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tìm phần tử thiếu</title>
+</head>
+<body>
+
+</body>
+<script>
+    let A = [7, 2, 5, 3, 5, 3];
+    let B = [7, 2, 5, 4, 6, 3, 5, 3];
+    let C = [];
+
+    /*arr2 là mảg cần lấy phần tử để so với arr1, arr3 là mảng chứa kết quả*/
+    function MissingValue(arr1, arr2, arr3) {
+        for (let i = 0; i < arr2.length; i++) {
+            let transitor = 0;
+            if (arr1.indexOf(arr2[i]) !== -1) {
+                transitor = arr1[arr1.indexOf(arr2[i])];
+                arr1[arr1.indexOf(arr2[i])] = arr1[arr1.length - 1];
+                arr1[arr1.length - 1] = transitor;
+                arr1.pop()
+            } else {
+                arr3.push(arr2[i])
+            }
+        }
+
+    }
+
+    MissingValue(A, B, C)
+    console.log(A)
+    console.log(B)
+    console.log(C)
+</script>
+</html>
