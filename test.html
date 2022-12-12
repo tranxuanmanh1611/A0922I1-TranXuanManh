@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<canvas id="myCanvas" width="200" height="200">
+
+</canvas>
+<p title="Đây là ví dụ cái này sẽ hiện ra trong thuộc tính 'title',vd:<p title='abc'>...">Đây là một para</p>
+<dl>
+    <dt id="test">Mạnh</dt>
+    <dd>Là tên một người</dd>
+    <dt>lucky</dt>
+    <dd>là tiếng anh</dd>
+</dl>
+<form action="https://www.google.com.vn/" method="post">
+    <input type="text" name="q"/>
+    <input type="submit" value="Tìm kiếm"/>
+
+</form>
+</body>
+<script>
+
+    var c = document.getElementById("myCanvas");
+    var ctx = c.getContext("2d");
+    ctx.beginPath();
+    ctx.arc(100,100,100,0,2*Math.PI);
+
+    ctx.stroke();
+
+</script>
+<script>
+    let myName= 'Tran Xuan Manh';
+
+    alert(myName.substr(0,3))
+</script>
+
+</html>
