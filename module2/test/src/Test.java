@@ -2,9 +2,16 @@ import java.util.Scanner;
 
 public class Test {
     public static void main(String[] args) {
-    double a =1;
-    double b = 5;
-    double c=a%b;
-    System.out.println(c);
+        int x =1;
+        System.out.println("Before the call, x is:"+ x);
+        increment(x);
+        System.out.println("After the call, x is:"+ x);
+    }
+
+    public static void increment(int n) {
+        n++;
+        System.out.println("n inside the method is "+ n);
     }
 }
+
+
