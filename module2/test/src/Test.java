@@ -1,12 +1,10 @@
 import java.util.Scanner;
 
 public class Test {
-    public static void main(String[] args){
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Moi ban nhap ky tu: ");
-        String character = sc.nextLine();
-        for (int i = 0; i < 10; i++) {
-            System.out.println(character);
-        }
+    public static void main(String[] args) {
+    double a =1;
+    double b = 5;
+    double c=a%b;
+    System.out.println(c);
     }
 }
