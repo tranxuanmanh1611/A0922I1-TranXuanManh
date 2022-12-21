@@ -8,44 +8,36 @@ public class AddNewElement {
         int size = scanner.nextInt();
         int[] arrayNumber = new int[size];
         for (int i = 0; i < size; i++) {
-            System.out.println("nhập phần tử thứ " + (i + 1) + ", nếu chưa muon nhập hãy để giá trị 0");
+            System.out.println("nhập phần tử thứ " + (i + 1));
             arrayNumber[i] = scanner.nextInt();
         }
         System.out.println("đã tao xong");
         for (int i = 0; i < arrayNumber.length; i++) {
             System.out.print(arrayNumber[i] + "  ");
-
         }
-        boolean check = false;
-        for (int i = 0; i < arrayNumber.length; i++) {
-            if (arrayNumber[i] == 0) {
-                check = true;
-                break;
-            }
-        }
-
-        System.out.println("Bạn muốn thêm giá trị nào?");
+        System.out.println("Bạn muốn thêm phần tử nào?");
         int inputNum = scanner.nextInt();
-        if (check) {
-            System.out.println("Bạn muốn thêm nó ở index nào?");
-            int index = scanner.nextInt();
-            while (index < 0 || index > arrayNumber.length - 1) {
-                System.out.println("Nhập lại");
-                index = scanner.nextInt();
-            }
-            if (arrayNumber[index] == 0) {
-                arrayNumber[index] = inputNum;
-            } else {
-                for (int i = index; i < arrayNumber.length; i++) {
-                    int temp = arrayNumber[i + 1];
-                    arrayNumber[i + 1] = arrayNumber[i];
-                }
-            }
-        } else {
-            System.out.println("Mảng không còn chỗ");
-        }
+        System.out.println("Bạn muốn thêm ở vị trí nào?");
+        int index = scanner.nextInt();
+
+        arrayNumber = AddElement(arrayNumber, inputNum, index);
+        System.out.println("Đã thêm, mảng mới: ");
         for (int i = 0; i < arrayNumber.length; i++) {
-            System.out.print(arrayNumber[i] + "  ");
+            System.out.println(arrayNumber[i] + "  ");
         }
+    }
+
+    public static int[] AddElement(int[] arr, int inputNum, int index) {
+        int[] newArray = new int[arr.length + 1];
+        for (int i = 0; i < newArray.length; i++) {
+            if (i < index) {
+                newArray[i] = arr[i];
+            } else if (i == index) {
+                newArray[i] = inputNum;
+            } else {
+                newArray[i] = arr[i - 1];
+            }
+        }
+        return newArray;
     }
 }
