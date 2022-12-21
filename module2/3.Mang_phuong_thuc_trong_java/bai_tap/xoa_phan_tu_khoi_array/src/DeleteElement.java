@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class DeleteElement {
     public static void main(String[] args) {
-        System.out.println("chương trình tìm ra và xóa một phần tử (thực chất là ghi đè số 0) neu có trong mảng số nguyên");
+        System.out.println("chương trình tìm ra và xóa một phần tử neu có trong mảng số nguyên");
         Scanner scanner = new Scanner(System.in);
         System.out.println("Bạn muốn tạo mảng dài bao nhiêu?");
         int size = scanner.nextInt();
@@ -11,30 +11,39 @@ public class DeleteElement {
             System.out.println("nhập phần tử thứ " + (i + 1));
             arrayNumber[i] = scanner.nextInt();
         }
-        System.out.println("Bạn muốn xóa phần tử nào?");
-
+        System.out.println("Bạn muon xóa phần tử nào?");
         int inputNum = scanner.nextInt();
+        while (FindIndex(arrayNumber, inputNum) == -1) {
+            System.out.println("Khong tim thay, nhap lại");
+            inputNum = scanner.nextInt();
+        }
+        arrayNumber = DeleteNumber(arrayNumber, FindIndex(arrayNumber, inputNum));
+        System.out.println("Dã xóa xong, mảng mới: ");
         for (int i = 0; i < arrayNumber.length; i++) {
-            if (arrayNumber[i] == inputNum) {
-                arrayNumber[i] = 0;
+            System.out.print(arrayNumber[i] + "  ");
+        }
 
+    }
+
+    public static int FindIndex(int[] arr, int inputNum) {
+        int index = -1;
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] == inputNum) {
+                index = i;
             }
         }
-        for (int i = 0; i < arrayNumber.length; i++) {
-            if (arrayNumber[i] == 0) {
-                for (int j = i; j < arrayNumber.length - 1; j++) {
-                    int temp = 0;
-                    temp = arrayNumber[j];
-                    arrayNumber[j] = arrayNumber[j + 1];
-                    arrayNumber[j + 1] = temp;
-                }
+        return index;
+    }
+
+    public static int[] DeleteNumber(int[] arr, int index) {
+        int[] array = new int[arr.length - 1];
+        for (int i = 0; i < array.length; i++) {
+            if (i < index) {
+                array[i] = arr[i];
+            } else {
+                array[i] = arr[i + 1];
             }
-
         }
-        for (int i = 0; i < arrayNumber.length; i++) {
-            System.out.println(arrayNumber[i]);
-        }
-
-
+        return array;
     }
 }
