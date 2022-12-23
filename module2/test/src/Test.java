@@ -2,15 +2,19 @@ import java.util.Scanner;
 
 public class Test {
     public static void main(String[] args) {
-        int x =1;
-        System.out.println("Before the call, x is:"+ x);
-        increment(x);
-        System.out.println("After the call, x is:"+ x);
-    }
+        Scanner sc= new Scanner(System.in);
+        String str;
+        System.out.println("nhập vào 1 chuỗi ký tự bất kỳ: ");
+        str = sc.nextLine();
+        char characters='a';
+        int count=0;
+        for (int i = 0; i <str.length() ; i++) {
+            if (str.charAt(i)==characters){
+                count++;
+            }
+        }
+        System.out.println("Số ký tự 'a' trong chuỗi là:"+count);
 
-    public static void increment(int n) {
-        n++;
-        System.out.println("n inside the method is "+ n);
     }
 }
 
