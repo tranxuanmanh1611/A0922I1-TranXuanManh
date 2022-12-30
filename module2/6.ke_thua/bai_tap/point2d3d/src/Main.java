@@ -7,6 +7,6 @@ public class Main {
         Point3D point3d1= new Point3D();
         point3d1.setXYZ(1,2,3);
         System.out.println(point3d1.toString());
-        
+
     }
 }
