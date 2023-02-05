@@ -1,20 +1,15 @@
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Test {
     public static void main(String[] args) {
-        Scanner sc= new Scanner(System.in);
-        String str;
-        System.out.println("nhập vào 1 chuỗi ký tự bất kỳ: ");
-        str = sc.nextLine();
-        char characters='a';
-        int count=0;
-        for (int i = 0; i <str.length() ; i++) {
-            if (str.charAt(i)==characters){
-                count++;
-            }
-        }
-        System.out.println("Số ký tự 'a' trong chuỗi là:"+count);
-
+        List<person> personList = new ArrayList<>();
+        person person1 = new person("Manh",24);
+        person person2 = new person("Hue",24);
+        personList.add(person1);
+        personList.add(person2);
+        System.out.println(personList.toString());
     }
 }
 

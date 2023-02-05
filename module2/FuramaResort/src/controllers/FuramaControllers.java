@@ -1,9 +1,12 @@
 package controllers;
 
+import services.EmployeeServiceImpl;
+
 import java.util.Scanner;
 
 public class FuramaControllers {
     public static void displayMainMenu() {
+        EmployeeServiceImpl employeeService = new EmployeeServiceImpl();
         Scanner scanner = new Scanner(System.in);
         int choice;
         do {
@@ -21,6 +24,13 @@ public class FuramaControllers {
                             "3 Edit employee\n" +
                             "4 Return main menu");
                     choice = scanner.nextInt();
+                    if (choice ==1){
+                        employeeService.displayList();
+                    }else if (choice == 2){
+                        employeeService.add();
+                    }else if (choice == 3){
+                        employeeService.edit();
+                    }
                 } while (choice != 4);
 
             } else if (choice == 2) {
@@ -60,4 +70,5 @@ public class FuramaControllers {
             }
         } while (choice != 6);
     }
+
 }
