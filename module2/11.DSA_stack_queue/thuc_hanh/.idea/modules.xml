@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/demo_stack/demo_stack.iml" filepath="$PROJECT_DIR$/demo_stack/demo_stack.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/thuc_hanh.iml" filepath="$PROJECT_DIR$/.idea/thuc_hanh.iml" />
+      <module fileurl="file://$PROJECT_DIR$/trien_khai_queue/trien_khai_queue.iml" filepath="$PROJECT_DIR$/trien_khai_queue/trien_khai_queue.iml" />
+      <module fileurl="file://$PROJECT_DIR$/trien_khai_stack/trien_khai_stack.iml" filepath="$PROJECT_DIR$/trien_khai_stack/trien_khai_stack.iml" />
+    </modules>
+  </component>
+</project>

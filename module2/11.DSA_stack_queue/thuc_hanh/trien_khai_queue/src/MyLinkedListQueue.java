@@ -7,7 +7,7 @@ public class MyLinkedListQueue {
         this.tail = null;
     }
 
-    public void enqueue(int key) {
+    public void enQueue(int key) {
         Node temp = new Node(key);
         if (this.tail == null) {
             this.head = this.tail = temp;
@@ -17,7 +17,7 @@ public class MyLinkedListQueue {
         this.tail = temp;
     }
 
-    public Node dequeue() {
+    public Node deQueue() {
 
         if (this.head == null) {
             return null;

@@ -1,14 +1,14 @@
 public class LinkedListQueueClient {
     public static void main(String[] args){
         MyLinkedListQueue queue = new MyLinkedListQueue();
-        queue.enqueue(10);
-        queue.enqueue(20);
-        queue.dequeue();
-        queue.dequeue();
-        queue.enqueue(30);
-        queue.enqueue(40);
-        queue.enqueue(50);
-        System.out.println("Dequeued item is " + queue.dequeue().key);
+        queue.enQueue(10);
+        queue.enQueue(20);
+        queue.deQueue();
+        queue.deQueue();
+        queue.enQueue(30);
+        queue.enQueue(40);
+        queue.enQueue(50);
+        System.out.println("Dequeued item is " + queue.deQueue().key);
     }
 
 }
