@@ -1,18 +1,18 @@
 package models;
 
 public abstract class Facility {
-    private String name;
+    private String serviceName;
     private int usableArea;
     private int cost;
     private int maxCapacity;
     private String rentType;
 
-    public String getName() {
-        return name;
+    public String getServiceName() {
+        return serviceName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setServiceName(String serviceName) {
+        this.serviceName = serviceName;
     }
 
     public int getUsableArea() {
@@ -49,8 +49,8 @@ public abstract class Facility {
 
     public Facility() {}
 
-    public Facility(String name, int usableArea, int cost, int maxCapacity, String rentType) {
-        setName(name);
+    public Facility(String serviceName, int usableArea, int cost, int maxCapacity, String rentType) {
+        setServiceName(serviceName);
         setUsableArea(usableArea);
         setCost(cost);
         setMaxCapacity(maxCapacity);

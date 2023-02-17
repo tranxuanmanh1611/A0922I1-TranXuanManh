@@ -1,8 +1,12 @@
 package models;
 
 public class House extends Facility {
+    int usedTime = 0;
     private String roomStandard;
     private int floor;
+    public int getUsedTime(){
+        return usedTime;
+    }
 
     public String getRoomStandard() {
         return roomStandard;
@@ -22,8 +26,8 @@ public class House extends Facility {
 
     public House() {}
 
-    public House(String name, int usableArea, int cost, int maxCapacity, String rentType, String roomStandard, int floor) {
-        super(name, usableArea, cost, maxCapacity, rentType);
+    public House(String serviceName, int usableArea, int cost, int maxCapacity, String rentType, String roomStandard, int floor) {
+        super(serviceName, usableArea, cost, maxCapacity, rentType);
         setRoomStandard(roomStandard);
         setFloor(floor);
     }

@@ -1,15 +1,20 @@
 package services;
-
-
 import models.Employee;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
 public class EmployeeServiceImpl implements EmployeeService {
     Employee newEmployee;
-    static List<Employee> employeeList;
+    List<Employee> employeeList;
+    int employeeId=0;
+
+    public int getEmployeeId() {
+        return employeeId;
+    }
+    public void setEmployeeId(int id){
+        this.employeeId=id;
+    }
 
     public EmployeeServiceImpl() {
         employeeList = new ArrayList<>();
@@ -18,26 +23,24 @@ public class EmployeeServiceImpl implements EmployeeService {
     @Override
     public void add() {
         //Thu thông tin cua đối tượng employee
-        newEmployee = new Employee();
+        employeeId++;
         Scanner sc = new Scanner(System.in);
-        System.out.println("Nhập ID nhân viên");
-        int employeeId = sc.nextInt();
         System.out.println("Nhập tên nhân viên");
-        String name = sc.next();
+        String name = sc.nextLine();
         System.out.println("Nhập ngày sinh");
-        String birthday = sc.next();
+        String birthday = sc.nextLine();
         System.out.println("Nhập giới tính");
-        String gender = sc.next();
+        String gender = sc.nextLine();
         System.out.println("Nhập CCCD");
-        String citizenId = sc.next();
+        String citizenId = sc.nextLine();
         System.out.println("Nhập số điện thoại");
-        String phoneNumber = sc.next();
+        String phoneNumber = sc.nextLine();
         System.out.println("Nhập email");
-        String email = sc.next();
+        String email = sc.nextLine();
         System.out.println("Nhập trình độ học vấn");
-        String education = sc.next();
+        String education = sc.nextLine();
         System.out.println("Nhập chức vụ");
-        String position = sc.next();
+        String position = sc.nextLine();
         System.out.println("Nhập mức lương");
         int salary = sc.nextInt();
         newEmployee = new Employee(employeeId, name, birthday, gender, citizenId, phoneNumber, email, education, position, salary);
@@ -52,6 +55,12 @@ public class EmployeeServiceImpl implements EmployeeService {
         System.out.println("Nhập ID nhân viên bạn cần sửa");
         int id = sc.nextInt();
         do {
+            System.out.println("Đã tìm thấy nhân viên: ");
+            for (Employee employee:employeeList){
+                if (employee.getEmployeeId()==id){
+                    System.out.println(employee);
+                }
+            }
             System.out.println("Bạn muốn sửa thông tin gì:" +
                     "1.Name" +
                     "2.Birthday" +
@@ -168,11 +177,11 @@ public class EmployeeServiceImpl implements EmployeeService {
 
     @Override
     public void displayList() {
-        if (employeeList.size()==0){
+        if (employeeList.isEmpty()){
             System.out.println("Không có dữ liệu");
         }
         for (Employee employee : employeeList) {
-            System.out.println(employee.toString());
+            System.out.println(employee);
         }
     }
 }

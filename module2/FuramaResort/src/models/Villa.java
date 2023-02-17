@@ -1,8 +1,13 @@
 package models;
 
 public class Villa extends Facility {
+    int usedTime = 0;
     private String roomStandard;
     private int poolArea;
+
+    public int getUsedTime() {
+        return usedTime;
+    }
 
     public String getRoomStandard() {
         return roomStandard;
@@ -23,8 +28,8 @@ public class Villa extends Facility {
     public Villa() {
     }
 
-    public Villa(String name, int usableArea, int cost, int maxCapacity, String rentType, String roomStandard, int poolArea) {
-        super(name, usableArea, cost, maxCapacity, rentType);
+    public Villa(String serviceName, int usableArea, int cost, int maxCapacity, String rentType, String roomStandard, int poolArea) {
+        super(serviceName, usableArea, cost, maxCapacity, rentType);
         setRoomStandard(roomStandard);
         setPoolArea(poolArea);
     }

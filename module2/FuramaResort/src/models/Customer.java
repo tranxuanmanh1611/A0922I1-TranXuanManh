@@ -41,4 +41,13 @@ public class Customer extends Person {
         setAddress(address);
 
     }
+
+    @Override
+    public String toString() {
+        return "Customer" +super.toString() +
+                "customerId=" + customerId +
+                ", membership='" + membership + '\'' +
+                ", address='" + address + '\'' +
+                "} " ;
+    }
 }

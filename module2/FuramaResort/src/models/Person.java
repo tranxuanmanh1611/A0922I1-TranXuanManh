@@ -64,7 +64,7 @@ public abstract class Person {
                 ", gender='" + gender + '\'' +
                 ", citizenId='" + citizenId + '\'' +
                 ", phoneNumber='" + phoneNumber + '\'' +
-                ", email='" + email + '\'' ;
+                ", email='" + email +", " +'\'' ;
     }
 
     public Person(){}

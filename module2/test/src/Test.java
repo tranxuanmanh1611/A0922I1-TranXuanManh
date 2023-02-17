@@ -1,33 +1,26 @@
+import java.io.*;
 import java.util.*;
 
 public class Test {
-    public static void main(String[] args) {
-      /* List<person> personList = new ArrayList<>();
-        person person1 = new person("Manh",24);
-        person person2 = new person("Hue",24);
-        personList.add(person1);
-        personList.add(person2);
-        System.out.println(personList);*/
-        /*Set<String> cities = new HashSet<>();
-        cities.add("Danang");
-        cities.add("");
-        cities.add("Hue");
-        cities.add("Quangtri");
+    public static void main(String[] args) throws IOException {
+        File newFile = new File("CodeGym.txt");
+        InputStream is = new FileInputStream("CodeGym.txt");
 
-        ListIterator<String> iteratorCities = cities.listIterator();
-        while (iteratorCities.hasNext()) {
-            System.out.println(iteratorCities.next());
-        }*/
-        Set<String> set = new HashSet<>();
-        set.add("London");
-        set.add("Paris");
-        set.add("New York");
-        set.add("San Francisco"); set.add("Beijing");
-                set.add("NewYork");
-        System.out.println(set);
-        for (String s : set) {
-            System.out.print(s.toUpperCase() + " ");
+        int i = -1;
+
+        // Đọc lần lượt các byte (8bit) trong luồng và lưu vào biến i
+        // Khi đọc ra giá trị -1 nghĩa là kết thúc luồng.
+        while ((i = is.read()) != -1) {
+            System.out.println((char) i);
         }
+        is.close();
+    }
+
+    public static int sum(int n) {
+        if (n >= 1) {
+            return sum(n - 1) + n;
+        }
+        return n;
     }
 }
 
