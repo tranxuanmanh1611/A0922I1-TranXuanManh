@@ -1,26 +1,26 @@
-import java.io.*;
-import java.util.*;
+import java.util.LinkedList;
+import java.util.Scanner;
 
 public class Test {
-    public static void main(String[] args) throws IOException {
-        File newFile = new File("CodeGym.txt");
-        InputStream is = new FileInputStream("CodeGym.txt");
-
-        int i = -1;
-
-        // Đọc lần lượt các byte (8bit) trong luồng và lưu vào biến i
-        // Khi đọc ra giá trị -1 nghĩa là kết thúc luồng.
-        while ((i = is.read()) != -1) {
-            System.out.println((char) i);
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        LinkedList<Character> max = new LinkedList<>();
+        LinkedList<Character> list = new LinkedList<>();
+        System.out.print("Nhập chuỗi: ");
+        String string = input.nextLine();
+        for (int i = 0; i < string.length(); i++) {
+            if (list.size() > 0 && string.charAt(i) <= list.getLast()) {
+                list.clear();
+            }
+            list.add(string.charAt(i));
+            if (list.size() > max.size()) {
+                max.clear();
+                max.addAll(list);
+            }
         }
-        is.close();
-    }
-
-    public static int sum(int n) {
-        if (n >= 1) {
-            return sum(n - 1) + n;
+        for (Character ch : max) {
+            System.out.print(ch);
         }
-        return n;
     }
 }
 
