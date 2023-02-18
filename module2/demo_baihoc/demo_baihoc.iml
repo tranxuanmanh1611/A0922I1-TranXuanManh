@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/10.ArrayList_LinkedList" isTestSource="false" packagePrefix="collection" />
+      <sourceFolder url="file://$MODULE_DIR$/11.generic_stack_queue" isTestSource="false" packagePrefix="generic_stack_queue" />
+      <sourceFolder url="file://$MODULE_DIR$/12.Java_colection_framework" isTestSource="false" packagePrefix="map_tree" />
+      <sourceFolder url="file://$MODULE_DIR$/13.thuat_toan_tim_kiem" isTestSource="false" packagePrefix="search" />
+      <sourceFolder url="file://$MODULE_DIR$/15.Exception" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/16.In_out_file" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/5.access_modifier" isTestSource="false" packagePrefix="access_modifier" />
+      <sourceFolder url="file://$MODULE_DIR$/6.inheritance" isTestSource="false" packagePrefix="inheritance" />
+      <sourceFolder url="file://$MODULE_DIR$/7.abstract_interface" isTestSource="false" packagePrefix="abstract_interface" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>
