@@ -17,7 +17,7 @@ public class TestFile {
 //        List<Student> sts = utils.readFromFile(".\\\\src\\\\filecharacter\\\\student.csv");
 //        sts.forEach(System.out::println);
 //        System.out.println(sts.get(5).mark);
-        ReadWriteFile.writeToFile(".\\src\\filecharacter\\student1.csv", students);
+        ReadWriteFile.writeToFile(".\\srcfilecharacter\\student1.csv", students);
         List<Student> students1 = ReadWriteFile.readFromFile(".\\src\\filecharacter\\student1.csv");
         students1.forEach(System.out::println);
     }
