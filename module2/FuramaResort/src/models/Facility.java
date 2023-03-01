@@ -56,4 +56,13 @@ public abstract class Facility {
         setMaxCapacity(maxCapacity);
         setRentType(rentType);
     }
+
+    @Override
+    public String toString() {
+        return  "serviceName='" + serviceName + '\'' +
+                ", usableArea=" + usableArea +
+                ", cost=" + cost +
+                ", maxCapacity=" + maxCapacity +
+                ", rentType='" + rentType + '\'';
+    }
 }

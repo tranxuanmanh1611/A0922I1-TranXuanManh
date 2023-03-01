@@ -31,4 +31,13 @@ public class House extends Facility {
         setRoomStandard(roomStandard);
         setFloor(floor);
     }
+
+    @Override
+    public String toString() {
+        return "House{"+ super.toString() +
+                ", usedTime=" + usedTime +
+                ", roomStandard='" + roomStandard + '\'' +
+                ", floor=" + floor +
+                "} " ;
+    }
 }

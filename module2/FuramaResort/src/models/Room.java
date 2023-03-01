@@ -22,4 +22,12 @@ public class Room extends Facility {
         super(serviceName, usableArea, cost, maxCapacity, rentType);
         setFreeService(freeService);
     }
+
+    @Override
+    public String toString() {
+        return "Room{"+ super.toString() +
+                ", usedTime=" + usedTime +
+                ", freeService='" + freeService + '\'' +
+                "} " ;
+    }
 }

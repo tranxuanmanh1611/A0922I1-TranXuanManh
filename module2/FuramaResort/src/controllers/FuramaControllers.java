@@ -1,7 +1,9 @@
 package controllers;
 
-import services.CustomerServiceImpl;
-import services.EmployeeServiceImpl;
+
+import services.Impl.CustomerServiceImpl;
+import services.Impl.EmployeeServiceImpl;
+import services.Impl.FacilityServiceImpl;
 
 import java.util.Scanner;
 
@@ -9,6 +11,7 @@ public class FuramaControllers {
     public static void displayMainMenu() {
         EmployeeServiceImpl employeeService = new EmployeeServiceImpl();
         CustomerServiceImpl customerService = new CustomerServiceImpl();
+        FacilityServiceImpl facilityService = new FacilityServiceImpl();
         Scanner scanner = new Scanner(System.in);
         int choice;
         do {
@@ -57,6 +60,11 @@ public class FuramaControllers {
                             "3 Display list facility maintenance\n" +
                             "4 Return main menu");
                     choice = scanner.nextInt();
+                    if (choice == 2) {
+                        facilityService.add();
+                    } else if (choice == 1) {
+                        facilityService.displayList();
+                    }
                 } while (choice != 4);
 
             } else if (choice == 4) {

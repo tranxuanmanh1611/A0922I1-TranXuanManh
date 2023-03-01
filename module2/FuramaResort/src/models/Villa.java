@@ -33,4 +33,13 @@ public class Villa extends Facility {
         setRoomStandard(roomStandard);
         setPoolArea(poolArea);
     }
+
+    @Override
+    public String toString() {
+        return "Villa{"+ super.toString() +
+                ", usedTime=" + usedTime +
+                ", roomStandard='" + roomStandard + '\'' +
+                ", poolArea=" + poolArea +
+                "} " ;
+    }
 }
