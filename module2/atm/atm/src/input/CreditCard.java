@@ -1,4 +1,4 @@
-package card;
+package input;
 
 public class CreditCard extends Card{
        private int limit;

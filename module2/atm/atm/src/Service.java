@@ -1,6 +1,6 @@
-import card.ATM;
-import card.Card;
-import card.CreditCard;
+import input.ATM;
+import input.Card;
+import input.CreditCard;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -84,60 +84,68 @@ public class Service {
     }
 
     public void transaction() {
-        sc.nextLine();
-        System.out.println("Nhập số thẻ giao dịch");
-        String cardNumber = sc.nextLine();
-        int choice;
-        do {
-            System.out.println("4.1. Thanh toán\n 4.2. Nộp tiên\n 4.3. Quay lại\n");
-            choice = sc.nextInt();
-            if (choice == 1) {
-                payment(cardNumber);
-            } else if (choice == 2) {
-                deposit(cardNumber);
-            }
-        } while (choice != 3);
-    }
-
-    public void payment(String cardNumber) {
-        boolean isFound = false;
-        for (Card card : cardList) {
-            if ((card.getCardNumber()).equals(cardNumber)) {
-                isFound = true;
-                System.out.println("Chủ thẻ: " + card.getCardOwner());
-                System.out.println("Nhập số tiền thanh toán: ");
-                int money = sc.nextInt();
-                if (card.getType().equals("ATM")) {
-                    if (money > card.getBalance()) {
-                        System.out.println("Số dư không đủ");
-                    } else {
-                        card.withdraw(money);
-                        System.out.println("Đã thanh toán, số dư: " + card.getBalance());
-
-                    }
-                } else if (card.getType().equals("CreditCard")) {
-                    if (card.getBalance() +((CreditCard) card).getLimit()-money>=0) {
-                        card.withdraw(money);
-                        System.out.println("Thanh toán thành công, hạn mức còn: " + (card.getBalance() + ((CreditCard) card).getLimit()) + "số dư: " + card.getBalance());
-                    } else {
-                        System.out.println("Hạn mức không đủ, vui lòng thanh toan nợ");
-                    }
+        Card data = find();
+        if (data == null) {
+            System.out.println("Không tìm thấy");
+        } else {
+            int choice;
+            do {
+                System.out.println("4.1. Thanh toán\n 4.2. Nộp tiên\n 4.3. Chuyển tiền\n 4.4. Quay lại\n");
+                choice = sc.nextInt();
+                if (choice == 1) {
+                    payment(data);
+                } else if (choice == 2) {
+                    deposit(data);
+                }else if (choice==3){
+                    transfer(data);
                 }
-            }
-        }
-        if (!isFound) {
-            System.out.println("Không tìm thấy thẻ");
+            } while (choice != 4);
         }
     }
 
-    public void deposit(String cardNumber) {
+    public void payment(Card input) {
+        System.out.println("Chủ thẻ: " + input.getCardOwner());
+        System.out.println("Nhập số tiền thanh toán: ");
+        int money = sc.nextInt();
+        if (input.getType().equals("ATM")) {
+            if (money > input.getBalance()) {
+                System.out.println("Số dư không đủ");
+            } else {
+                input.withdraw(money);
+                System.out.println("Đã thanh toán, số dư: " + input.getBalance());
 
-        for (Card card : cardList) {
-            if (card.getCardNumber().equals(cardNumber)) {
+            }
+        } else if (input.getType().equals("CreditCard")) {
+            if (input.getBalance() + ((CreditCard) input).getLimit() - money >= 0) {
+                input.withdraw(money);
+                System.out.println("Thanh toán thành công, hạn mức còn: " + (input.getBalance() + ((CreditCard) input).getLimit()) + "số dư: " + input.getBalance());
+            } else {
+                System.out.println("Hạn mức không đủ, vui lòng thanh toan nợ");
+            }
+        }
+    }
+
+    public void deposit(Card input) {
                 System.out.println("Nhập số tiền nạp: ");
                 int money = sc.nextInt();
-                card.deposit(money);
-                System.out.println("Nạp tiền thành công, số dư: " + card.getBalance());
+                input.deposit(money);
+                System.out.println("Nạp tiền thành công, số dư: " + input.getBalance());
+    }
+    public void transfer(Card card){
+
+        if (card.getType().equals("CreditCard")){
+            System.out.println("Thẻ tín dụng không được chuyển khoản");
+        }else {
+            System.out.println("Nhập số tiền cần chuyen");
+            int money = sc.nextInt();
+            if (card.getBalance()<money){
+                System.out.println("TK không đủ tiền");
+            }else {
+                System.out.println("Nhập tài khoản bạn muốn chuyển đến");
+                Card receiveCard = find();
+                card.withdraw(money);
+                receiveCard.deposit(money);
+                System.out.println("Đã chuyển thành công, số dư: "+card.getBalance());
             }
         }
     }
@@ -157,7 +165,7 @@ public class Service {
                 if (entry[0].equals("ATM")) {
                     cardList.add(new ATM(entry[1], entry[2], entry[3], entry[4], Integer.parseInt(entry[5]), entry[0]));
                 } else {
-                    cardList.add(new CreditCard(entry[1], entry[2], entry[3], entry[4], Integer.parseInt(entry[5]), Integer.parseInt(entry[6]),entry[0]));
+                    cardList.add(new CreditCard(entry[1], entry[2], entry[3], entry[4], Integer.parseInt(entry[5]), Integer.parseInt(entry[6]), entry[0]));
                 }
             }
         } catch (FileNotFoundException e) {
@@ -166,6 +174,30 @@ public class Service {
             throw new RuntimeException(e);
         }
         display();
+    }
+
+    public Card find() {
+        System.out.println("Nhap tên hoac CCCD");
+        String data = sc.nextLine();
+        if (!Validate.validateFind(data)) {
+            System.out.println("Định dạng thẻ phải 12 số, hoặc họ tên không đúng định dạng");
+            System.out.println("Nhap lại tên hoac CCCD");
+            data = sc.nextLine();
+        }
+        Card output = null;
+        boolean isFound = false;
+        for (Card card : cardList) {
+            if (card.getCardNumber().equals(data) || card.getCardOwner().equals(data)) {
+                System.out.println("Đã tìm thấy");
+                isFound = true;
+                output = card;
+            }
+        }
+        return output;
+    }
+
+    public void delete() {
+
     }
 
     public void display() {

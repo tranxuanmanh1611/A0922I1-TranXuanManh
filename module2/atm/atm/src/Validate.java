@@ -2,6 +2,12 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class Validate {
+    public static boolean validateFind(String data){
+        String findRegex ="(\\d{12})?[\\w\\s]+";
+        Pattern pattern = Pattern.compile(findRegex);
+        Matcher matcher = pattern.matcher(data);
+        return matcher.matches();
+    }
 
 
   public static boolean validateCardNumber(String cardNumber){

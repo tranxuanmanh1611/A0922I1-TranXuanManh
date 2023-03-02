@@ -1,4 +1,4 @@
-package card;
+package input;
 
 public class ATM extends Card{
 

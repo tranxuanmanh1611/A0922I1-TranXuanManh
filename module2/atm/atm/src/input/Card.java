@@ -1,4 +1,4 @@
-package card;
+package input;
 
 public abstract class Card {
     private String type;

@@ -1,3 +1,5 @@
+import input.Card;
+
 import java.util.Scanner;
 
 public class menu {
@@ -7,7 +9,7 @@ public class menu {
         int choice;
         do {
             System.out.println("Trình quản lí thẻ:\n 1.Mở thẻ\n 2.Xuất dữ liệu\n 3.Nhập dữ liệu\n 4.thanh toán\n"
-                    + " 5.Thoát\n");
+                    + " 5.Tìm kiem\n 6.thoát\n");
             choice = sc.nextInt();
             if (choice == 1) {
                 service.register();
@@ -18,10 +20,16 @@ public class menu {
             } else if (choice == 4) {
                 service.transaction();
                 sc.nextLine();
-            }
-            if (choice == 5) {
+            } else if (choice == 5) {
+                Card output =service.find();
+                if (output == null) {
+                    System.out.println("không tìm thấy");
+                } else {
+                    System.out.println(output.toString());
+                }
+            } else if (choice == 6) {
                 System.out.println("Đóng ứng dụng");
             }
-        } while (choice != 5);
+        } while (choice != 6);
     }
 }
