@@ -62,11 +62,45 @@ public class Service {
         }
     }
 
+    public void importData() {
+        String path = "D:\\codegym\\codegym\\module2\\atm\\atm\\data\\card.txt";
+        try {
+            File file = new File(path);
+            FileInputStream fileInputStream = new FileInputStream(file);
+            ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);
+                cardList.addAll((ArrayList<Card>) objectInputStream.readObject());
+
+         /* BufferedReader bufferedReader = new BufferedReader(new FileReader(file));
+            String line = null;
+            while ((line = bufferedReader.readLine()) != null) {
+                if (line.trim().equals("")) {
+                    continue;
+                }
+                String[] entry = line.split(",");
+                if (entry[0].equals("ATM")) {
+                    cardList.add(new ATM(entry[1], entry[2], entry[3], entry[4], Integer.parseInt(entry[5]), entry[0]));
+                } else {
+                    cardList.add(new CreditCard(entry[1], entry[2], entry[3], entry[4], Integer.parseInt(entry[5]), Integer.parseInt(entry[6]), entry[0]));
+                }
+            }*/
+        } catch (IOException | ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+        display();
+    }
+
     public void exportData() {
         String path = "D:\\codegym\\codegym\\module2\\atm\\atm\\data\\card.txt";
         try {
             File file = new File(path);
-            BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(file, false));
+            FileOutputStream fileOutputStream = new FileOutputStream(file);
+            ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream);
+
+                objectOutputStream.writeObject(cardList);
+
+            objectOutputStream.close();
+            fileOutputStream.close();
+           /* BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(file, false));
             for (Card card : cardList) {
                 if (card.getType().equals("ATM")) {
                     bufferedWriter.write(((ATM) card).toFileString());
@@ -76,7 +110,7 @@ public class Service {
                     bufferedWriter.write("\n");
                 }
             }
-            bufferedWriter.close();
+            bufferedWriter.close();*/
             System.out.println("Xuất file thành công");
         } catch (IOException e) {
             throw new RuntimeException(e);
@@ -96,7 +130,7 @@ public class Service {
                     payment(data);
                 } else if (choice == 2) {
                     deposit(data);
-                }else if (choice==3){
+                } else if (choice == 3) {
                     transfer(data);
                 }
             } while (choice != 4);
@@ -126,54 +160,29 @@ public class Service {
     }
 
     public void deposit(Card input) {
-                System.out.println("Nhập số tiền nạp: ");
-                int money = sc.nextInt();
-                input.deposit(money);
-                System.out.println("Nạp tiền thành công, số dư: " + input.getBalance());
+        System.out.println("Nhập số tiền nạp: ");
+        int money = sc.nextInt();
+        input.deposit(money);
+        System.out.println("Nạp tiền thành công, số dư: " + input.getBalance());
     }
-    public void transfer(Card card){
 
-        if (card.getType().equals("CreditCard")){
+    public void transfer(Card card) {
+
+        if (card.getType().equals("CreditCard")) {
             System.out.println("Thẻ tín dụng không được chuyển khoản");
-        }else {
+        } else {
             System.out.println("Nhập số tiền cần chuyen");
             int money = sc.nextInt();
-            if (card.getBalance()<money){
+            if (card.getBalance() < money) {
                 System.out.println("TK không đủ tiền");
-            }else {
+            } else {
                 System.out.println("Nhập tài khoản bạn muốn chuyển đến");
                 Card receiveCard = find();
                 card.withdraw(money);
                 receiveCard.deposit(money);
-                System.out.println("Đã chuyển thành công, số dư: "+card.getBalance());
+                System.out.println("Đã chuyển thành công, số dư: " + card.getBalance());
             }
         }
-    }
-
-
-    public void importData() {
-        String path = "D:\\codegym\\codegym\\module2\\atm\\atm\\data\\card.txt";
-        try {
-            File file = new File(path);
-            BufferedReader bufferedReader = new BufferedReader(new FileReader(file));
-            String line = null;
-            while ((line = bufferedReader.readLine()) != null) {
-                if (line.trim().equals("")) {
-                    continue;
-                }
-                String[] entry = line.split(",");
-                if (entry[0].equals("ATM")) {
-                    cardList.add(new ATM(entry[1], entry[2], entry[3], entry[4], Integer.parseInt(entry[5]), entry[0]));
-                } else {
-                    cardList.add(new CreditCard(entry[1], entry[2], entry[3], entry[4], Integer.parseInt(entry[5]), Integer.parseInt(entry[6]), entry[0]));
-                }
-            }
-        } catch (FileNotFoundException e) {
-            throw new RuntimeException(e);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-        display();
     }
 
     public Card find() {

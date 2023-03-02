@@ -1,6 +1,8 @@
 package input;
 
-public class ATM extends Card{
+import java.io.Serializable;
+
+public class ATM extends Card {
 
     public ATM(){}
 

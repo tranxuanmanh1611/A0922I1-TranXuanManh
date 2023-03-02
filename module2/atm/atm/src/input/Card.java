@@ -1,6 +1,8 @@
 package input;
 
-public abstract class Card {
+import java.io.Serializable;
+
+public abstract class Card implements Serializable {
     private String type;
     private String cardNumber;
     private String cardOwner;
