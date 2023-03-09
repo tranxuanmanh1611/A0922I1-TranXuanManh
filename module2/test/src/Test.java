@@ -1,26 +1,32 @@
-import java.util.*;
+
+
 
 public class Test {
-
-    public static void main(String[] args) throws Exception {
-        String str = "";
-        HashSet<String> hashSet1 = new HashSet<>();
-        HashSet<String> hashSet2 = new HashSet<>();
-        hashSet1.add("a");
-        hashSet1.add("b");
-        hashSet2.add("b");
-        System.out.println(hashSet1.retainAll(hashSet2));
-        HashMap<Integer,String> hashMap = new HashMap<>();
-
-        System.out.println(hashMap.isEmpty());
-        TreeMap<Integer,String> treeMap=new TreeMap<>();
-        treeMap.put(1,"a");
-        ArrayList<Integer>list=new ArrayList<>();
-        list.add(1);
-        list.add(2);
-TreeMap<String,Integer> treeMapa = new TreeMap<>();
-treeMapa.entrySet()
-
+    public static void main(String[] args) {
+        String str ="aaabbaaac";
+        String str3 = encodeString(str);
+        System.out.println(str3);
     }
 
+    public static String encodeString(String str) {
+        //Your code here
+            String str2 = "";
+            for (int i = 0; i < str.length();i++) {
+                int count = 0;
+                for (int j = i; j < str.length(); j++) {
+                    if (str.charAt(j) == str.charAt(i)) {
+                        count++;
+                    }
+                    if (str.charAt(j) != str.charAt(i)||j==str.length()-1) {
+                        str2 += str.charAt(i);
+                        str2 += count;
+                        i=j-1;
+                        break;
+                    }
+                }
+            }
+
+            return str2;
+    }
 }
+
