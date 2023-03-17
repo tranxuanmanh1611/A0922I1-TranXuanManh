@@ -50,29 +50,30 @@ INSERT INTO mark
 VALUES(1,1,1,8,1),
       (2,1,2,10,2),
       (3,2,1,12,1);
-
-select*
-from student;
-
-select *
-from student
-where student_status = true;
-
-SELECT *
-FROM subject 
-WHERE credit <10;
-
-SELECT student_id,
-	   student_name,
-       student_address
-       student_phone
+      
+-- Hiển thị tất cả các sinh viên có tên bắt đầu bảng ký tự ‘h’:
+SELECT student_name
 FROM student
-JOIN class
-ON student.class_id = class.class_id
-WHERE class_name='A1';
+WHERE student_name LIKE 'h%';
 
-SELECT student_name,
-       student_phone,
+-- Hiển thị các thông tin lớp học có thời gian bắt đầu vào tháng 12.
+SELECT class_name
+FROM class
+WHERE MONTH(class_start_date) =12;
+
+-- Hiển thị tất cả các thông tin môn học có credit trong khoảng từ 3-5.
+SELECT * 
+FROM subject
+WHERE credit BETWEEN 3 AND 5;
+
+-- Thay đổi mã lớp(ClassID) của sinh viên có tên ‘Hung’ là 2.
+UPDATE student
+SET class_id = 2
+WHERE student_id = 1;
+
+-- Hiển thị các thông tin: StudentName, SubName, Mark. Dữ liệu sắp xếp theo điểm thi (mark) giảm dần. nếu trùng sắp theo tên tăng dần.
+SELECT student.student_id,
+	   student.student_name,
        subject.subject_name,
        mark.mark
 FROM student
@@ -80,4 +81,4 @@ JOIN mark
 ON student.student_id = mark.student_id
 JOIN subject
 ON mark.subject_id = subject.subject_id
-WHERE subject_name = 'CF';
+ORDER BY mark DESC, student.student_name ASC;
