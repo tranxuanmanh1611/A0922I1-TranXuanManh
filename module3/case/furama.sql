@@ -1,4 +1,3 @@
-									--- Tạo database, tạo bảng
 CREATE DATABASE furama_resort;
 USE furama_resort;
 CREATE TABLE vi_tri(
@@ -41,7 +40,8 @@ CREATE TABLE khach_hang(
 						so_dien_thoai VARCHAR(45),
                         email VARCHAR(45),
                         dia_chi VARCHAR(45),
-                        FOREIGN KEY (ma_loai_khach) REFERENCES loai_khach(ma_loai_khach));
+                        FOREIGN KEY (ma_loai_khach) REFERENCES loai_khach(ma_loai_khach)
+                        ON DELETE CASCADE);
 CREATE TABLE kieu_thue(
 					   ma_kieu_thue INT PRIMARY KEY,
 					   ten_kieu_thue VARCHAR(45));
@@ -72,7 +72,8 @@ CREATE TABLE hop_dong(
                      ma_dich_vu INT,
                      FOREIGN KEY (ma_nhan_vien) REFERENCES nhan_vien(ma_nhan_vien),
                      FOREIGN KEY (ma_khach_hang) REFERENCES khach_hang(ma_khach_hang),
-                     FOREIGN KEY (ma_dich_vu) REFERENCES dich_vu(ma_dich_vu));
+                     FOREIGN KEY (ma_dich_vu) REFERENCES dich_vu(ma_dich_vu)
+                     ON DELETE CASCADE);
 
 						
 CREATE TABLE dich_vu_di_kem(
@@ -87,7 +88,8 @@ CREATE TABLE hop_dong_chi_tiet(
                                ma_dich_vu_di_kem INT,
                                so_luong INT,
                                FOREIGN KEY (ma_hop_dong) REFERENCES hop_dong(ma_hop_dong),
-                               FOREIGN KEY (ma_dich_vu_di_kem) REFERENCES dich_vu_di_kem(ma_dich_vu_di_kem));
+                               FOREIGN KEY (ma_dich_vu_di_kem) REFERENCES dich_vu_di_kem(ma_dich_vu_di_kem)
+                               ON DELETE CASCADE);
                                
 																							-- thêm dữ liệu
 
@@ -191,7 +193,7 @@ VALUES (1,5,2,4),
 
 -- 2.	Hiển thị thông tin của tất cả nhân viên có trong hệ thống có tên bắt đầu là một trong các ký tự “H”, “T” hoặc “K” và có tối đa 15 kí tự.
 SELECT *
-FROM nhan_vien WHERE (ten LIKE 'H%' OR ten LIKE 'T%' OR ten LIKE 'K%') AND CHAR_LENGTH(CONCAT(ho_ten_lot,ten)) <= 15; 
+FROM nhan_vien WHERE (ten LIKE 'H%' OR ten LIKE 'T%' OR ten LIKE 'K%') AND CHAR_LENGTH(CONCAT(ho_ten_lot,' ',ten)) <= 15; 
 
 -- 3.	Hiển thị thông tin của tất cả khách hàng có độ tuổi từ 18 đến 50 tuổi và có địa chỉ ở “Đà Nẵng” hoặc “Quảng Trị”.
 SELECT *
@@ -237,9 +239,10 @@ GROUP BY 4,1;
 SELECT dich_vu.ma_dich_vu, dich_vu.ten_dich_vu, dich_vu.dien_tich, dich_vu.chi_phi_thue, loai_dich_vu.ten_loai_dich_vu
 FROM dich_vu
 JOIN loai_dich_vu ON dich_vu.ma_loai_dich_vu = loai_dich_vu.ma_loai_dich_vu
-LEFT JOIN hop_dong ON dich_vu.ma_dich_vu = hop_dong.ma_dich_vu
-WHERE DATE(hop_dong.ngay_lam_hop_dong)<'2020-12-31' OR DATE(hop_dong.ngay_lam_hop_dong)>'2021-04-01'
-GROUP BY 1;
+JOIN hop_dong ON dich_vu.ma_dich_vu = hop_dong.ma_dich_vu
+WHERE hop_dong.ma_hop_dong NOT IN (SELECT ma_hop_dong FROM hop_dong WHERE (ngay_lam_hop_dong)>'2020-12-31' AND DATE(ngay_lam_hop_dong)<'2021-04-01')
+    AND hop_dong.ngay_lam_hop_dong > '2021-04-01'
+    GROUP BY 1;
 
 -- 7.	Hiển thị thông tin ma_dich_vu, ten_dich_vu, dien_tich, so_nguoi_toi_da, chi_phi_thue, ten_loai_dich_vu của tất cả các loại dịch vụ 
 -- đã từng được khách hàng đặt phòng trong năm 2020 nhưng chưa từng được khách hàng đặt phòng trong năm 2021.
@@ -304,7 +307,3 @@ SELECT hop_dong.ma_hop_dong,
        dich_vu.ten_dich_vu,
        
        
-FROM hop_dong       
-JOIN nhan_vien ON hop_dong.ma_nhan_vien = nhan_vien.ma_nhan_vien
-JOIN khach_hang ON hop_dong.ma_khach_hang = khach_hang.ma_khach_hang
-JOIN dich_vu ON hop_dong.ma_dich_vu = dich_vu.ma_dich_vu
