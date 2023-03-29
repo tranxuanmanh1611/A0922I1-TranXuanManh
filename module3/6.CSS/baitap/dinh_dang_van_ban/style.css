@@ -1,0 +1,21 @@
+h1 {
+    font-family: "Palatino Linotype";
+    border-bottom: 1px solid gray;
+    width: 50%;
+    margin-bottom: 5px;
+}
+
+h2 {
+    font-family: sans-serif;
+    font-size: 12px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+}
+
+p {
+    font-family: sans-serif;
+    font-size: 14px;
+    width: 50%;
+    text-align: justify;
+    text-indent: 50px;
+}

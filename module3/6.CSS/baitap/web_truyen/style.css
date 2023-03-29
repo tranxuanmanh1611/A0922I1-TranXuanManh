@@ -1,0 +1,67 @@
+header {
+    background: bisque;
+    height: 50px;
+}
+header img {
+    float: left;
+    width: 50px;
+    height: 50px;
+    border-radius: 15px;
+    display: inline-block;
+}
+
+header h3 {
+    float: left;
+    font-style: italic;
+    font-size:15px ;
+    display: inline-block;
+    margin-left: 30px;
+}
+
+.item {
+    alignment: center;
+}
+figure {
+    display: inline-block;
+
+}
+
+
+figure img{
+        height: 100px;
+        width: 80px;
+    float: left;
+    margin-top: 20px;
+}
+
+figure.bookInfo section p {
+display: inline-block;
+    text-align: justify;
+    width: 60%;
+    float: left;
+    margin-left: 20px;
+}
+
+
+figcaption{
+    text-align: center;
+    margin-top: 10px;
+}
+
+ul.listBook {
+    margin-top: 80px;
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+section.chapterList p {
+    font-weight: bold;
+}
+section.chapterList a {
+    display: inline-block;
+    width: 50%;
+}
+
