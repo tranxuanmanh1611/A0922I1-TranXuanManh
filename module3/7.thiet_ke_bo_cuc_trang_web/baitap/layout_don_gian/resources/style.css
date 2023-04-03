@@ -53,16 +53,9 @@ div.navBar ul li {
 }
 
 
-div.middle {
-    display: flex;
-}
+
 main {
     height:615px;
-}
-
-main div.content{
-    width: 59%;
-    display: flex;
 }
 
 main div.link,
@@ -81,13 +74,11 @@ main div.advertisement{
     width: 20%;
     background-color: rgb(245, 245, 245);
     height: 615px;
-    flex-shrink: 1;
 }
 
 
 main div.content{
-flex-shrink: 2;
-    width: 59%;
+    width: 58%;
     text-align: justify;
     text-indent: 30px;
 }
