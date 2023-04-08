@@ -1,0 +1,13 @@
+
+
+
+div.banner img {
+    height: 200px;
+    width: 200px;
+}
+@media screen and (min-width: 720px) {
+    div.banner img.biggest {
+        height: 100%;
+        width: 100%;
+    }
+}
