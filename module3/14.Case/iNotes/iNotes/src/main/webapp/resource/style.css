@@ -1,0 +1,27 @@
+body{
+    width: 100%;
+}
+
+.container{
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+div.note {
+    background-color: yellow;
+    min-width: 280px;
+    height: 320px;
+    border: 2px solid yellow;
+    margin: 25px 25px;
+}
+
+.note h2 {
+    display: inline-block;
+}
+
+.note button.delete {
+    display: inline-block;
+    float: right;
+}

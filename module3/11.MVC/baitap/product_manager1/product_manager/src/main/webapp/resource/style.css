@@ -1,0 +1,38 @@
+body{
+    box-sizing: border-box;
+}
+table{
+    margin: 30px auto;
+}
+table,tr,th,td{
+    border: 2px solid black;
+}
+tr,th,td{
+    width: 180px;
+}
+td{
+    justify-content: center;
+}
+td.blank {
+    border: white;
+}
+td.productImage img{
+    width: 100px;
+    height: 100px;
+}
+button.create {
+    background-color: cornflowerblue;
+    color: white;
+    border-radius: 10px;
+}
+button.cancel {
+    background-color: yellow;
+    color: white;
+    border-radius: 10px;
+}
+button.delete{}
+button.edit{}
+a{
+    text-decoration: none;
+    text-decoration-color: white;
+}
