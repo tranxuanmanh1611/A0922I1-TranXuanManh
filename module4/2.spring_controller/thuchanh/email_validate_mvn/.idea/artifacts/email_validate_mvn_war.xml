@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="email_validate_mvn:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>email_validate_mvn</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="email_validate_mvn-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="email_validate_mvn:war exploded" />
+    </root>
+  </artifact>
+</component>

@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="timezone-mvn:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>timezone-mvn</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="timezone-mvn-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="timezone-mvn:war exploded" />
+    </root>
+  </artifact>
+</component>
