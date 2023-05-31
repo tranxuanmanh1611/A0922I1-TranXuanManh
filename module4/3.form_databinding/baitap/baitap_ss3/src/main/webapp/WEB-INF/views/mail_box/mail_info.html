@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>infor</title>
+</head>
+<body>
+    <table th:object="${mailbox}">
+        <tr>
+            <th>Language:</th>
+            <td th:text="*{languages}"></td>
+        </tr>
+        <tr>
+            <th>Email per page:</th>
+            <td th:text="*{emailPerPage}"></td>
+        </tr>
+        <tr>
+            <th>Spam Filter:</th>
+            <td th:text="*{isSpamFilter()}"></td>
+        </tr>
+        <tr>
+            <th>Signature:</th>
+            <td th:text="*{signature}"></td>
+        </tr>
+    </table>
+    <a href="http://localhost:8080">Về trang chủ</a>
+</body>
+</html>

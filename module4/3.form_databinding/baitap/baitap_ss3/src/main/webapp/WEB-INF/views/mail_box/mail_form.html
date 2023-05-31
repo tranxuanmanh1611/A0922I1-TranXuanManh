@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Update</title>
+</head>
+<body>
+<form method="post" action="mail_box/save" th:object="${form}">
+   <table>
+       <tr>
+           <th>Languages:</th>
+           <td>
+               <select th:field="*{languages}">
+                   <option th:value="${l}" th:each="l : ${languages}" th:text="${l}"></option>
+               </select>
+           </td>
+       </tr>
+       <tr>
+           <th>Email per page:</th>
+           <td>
+               <select th:field="*{emailPerPage}">
+                   <option th:each="p : ${pages}" th:value="${p}" th:text="${p}"></option>
+               </select>
+           </td>
+       </tr>
+       <tr>
+           <th>Spams Filter:</th>
+           <td><input type="checkbox" th:field="*{spamFilter}" id="spam"><label for="spam">Enable spams filter</label></td>
+       </tr>
+       <tr>
+           <th>Signature:</th>
+           <td>
+               <textarea th:field="*{signature}" id="" cols="30" rows="10"></textarea>
+           </td>
+       </tr>
+   </table>
+    <input type="submit" value="save">
+    <a href="http://localhost:8080">Về trang chủ</a>
+</form>
+</body>
+</html>
