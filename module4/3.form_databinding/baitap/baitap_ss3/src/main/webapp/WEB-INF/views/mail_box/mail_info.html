@@ -8,7 +8,7 @@
     <table th:object="${mailbox}">
         <tr>
             <th>Language:</th>
-            <td th:text="*{languages}"></td>
+            <td th:text="*{language.language}"></td>
         </tr>
         <tr>
             <th>Email per page:</th>
@@ -16,7 +16,7 @@
         </tr>
         <tr>
             <th>Spam Filter:</th>
-            <td th:text="*{isSpamFilter()}"></td>
+            <td th:text="${mailbox.spamFilter}? 'Active':'Inactive'"></td>
         </tr>
         <tr>
             <th>Signature:</th>
@@ -24,5 +24,7 @@
         </tr>
     </table>
     <a href="http://localhost:8080">Về trang chủ</a>
+    <a th:href="@{{id}/update(id=${mailbox.id})}">Sửa</a>
+    <a href="">Xóa</a>
 </body>
 </html>

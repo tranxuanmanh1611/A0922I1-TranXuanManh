@@ -5,13 +5,14 @@
     <title>Update</title>
 </head>
 <body>
-<form method="post" action="mail_box/save" th:object="${form}">
+<form method="POST" action="update" th:object="${form}">
    <table>
        <tr>
+           <td><input th:field="*{id}" th:value="*{id}" hidden></td>
            <th>Languages:</th>
            <td>
-               <select th:field="*{languages}">
-                   <option th:value="${l}" th:each="l : ${languages}" th:text="${l}"></option>
+               <select th:field="*{language.id}">
+                   <option th:value="${l.id}" th:each="l : ${languages}" th:text="${l.language}"></option>
                </select>
            </td>
        </tr>

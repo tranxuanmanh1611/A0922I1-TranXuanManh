@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Mail list</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Language</th>
+            <th>Email Per Page</th>
+            <th>Spam Filter</th>
+            <th>Signature</th>
+        </tr>
+        <tr th:each="m : ${mail_boxes}" th:object="${m}">
+            <td><a th:href="@{mail_box/info/{id}(id=*{id})}" th:text="*{id}"></a></td>
+            <td th:text="*{language.getLanguage()}"></td>
+            <td th:text="*{emailPerPage}"></td>
+            <td th:text="${m.spamFilter}?'Active':'Inactive'"></td>
+            <td th:text="*{signature}"></td>
+        </tr>
+    </table>
+</body>
+</html>
