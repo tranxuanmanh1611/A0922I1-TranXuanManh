@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Product detail</title>
+</head>
+<body>
+<table th:object="${product}">
+    <tr>
+        <th>Name:</th>
+        <td th:text="*{name}"> </td>
+    </tr>
+    <tr>
+        <th>Category:</th>
+        <td th:text="*{category.name}"></td>
+        </tr>
+    <tr>
+        <th>Price:</th>
+        <td th:text="*{price}"></td>
+    </tr>
+    <tr>
+        <th>Released date:</th>
+        <td th:text="*{#dates.format(dateRelease,'dd/MM/yyy')}"></td>
+    </tr>
+    <tr>
+        <th>Quantity:</th>
+        <td th:text="*{quantity}"></td>
+    </tr>
+    <tr>
+        <td><a th:href="@{update/{id}(id=*{id})}">Sửa</a></td>
+        <td><a th:href="@{delete/{id}(id=*{id})}">Xóa</a></td>
+    </tr>
+</table>
+</body>
+</html>

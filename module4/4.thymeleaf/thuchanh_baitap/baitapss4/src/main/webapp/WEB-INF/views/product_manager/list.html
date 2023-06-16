@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Product List</h1>
+<form action="product_manager/search" method="get">
+    <input type="text" name="searchByName">
+    <button type="submit">tìm</button>
+</form>
+<a href="product_manager/add">Add a new product</a>
+    <table>
+        <tr>
+            <th>Number</th>
+            <th>Name</th>
+            <th>Category</th>
+        </tr>
+        <tr th:each="p,iStat : ${products}" th:object="${p}">
+            <td th:text="${iStat.count}"></td>
+            <td ><a th:href="@{product_manager/detail/{id}(id=*{id})}" th:text="*{name}"></a></td>
+            <td th:text="*{category.name}"></td>
+        </tr>
+    </table>
+</body>
+</html>
