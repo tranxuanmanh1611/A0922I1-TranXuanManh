@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Add your song</title>
+</head>
+<body>
+<h1>Add your song here</h1>
+<form  method="post" th:object="${form}" th:action="${form.id}"
+      novalidate="novalidate" enctype="multipart/form-data">
+  <table>
+
+    <tr>
+        <th>What is the music's name:</th>
+        <td><input type="text" th:field="*{name}"></td>
+    </tr>
+      <tr>
+          <th>Who sings it:</th>
+          <td><input type="text" th:field="*{artist}"></td>
+      </tr>
+      <tr>
+          <th>What is the gerne:</th>
+          <td><input type="text" th:field="*{gerne}"></td>
+      </tr>
+      <tr>
+          <th>Finally, upload your song, let it empty if nothing change</th>
+          <td><input type="file" th:field="*{fileSong}"></td>
+      </tr>
+  </table>
+    <button type="submit">Save</button>
+</form>
+</body>
+</html>
