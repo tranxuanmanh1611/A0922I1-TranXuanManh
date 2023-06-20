@@ -10,4 +10,5 @@ public class welcomePage {
     public String showWelcomePage(){
         return "welcome";
     }
+
 }

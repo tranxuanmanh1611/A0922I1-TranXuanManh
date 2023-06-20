@@ -1,6 +1,6 @@
-package ghost_company.music_image.repository;
+package ghost_company.music_app.repository;
 
-import ghost_company.music_image.entity.Music;
+import ghost_company.music_app.entity.Music;
 import org.springframework.stereotype.Repository;
 
 import javax.persistence.EntityManager;

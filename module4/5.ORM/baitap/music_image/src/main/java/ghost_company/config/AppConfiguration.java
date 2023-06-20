@@ -39,7 +39,7 @@ import java.util.Properties;
 @EnableWebMvc
 @ComponentScan("ghost_company")
 @EnableTransactionManagement
-@EnableJpaRepositories("ghost_company.music_image")
+@EnableJpaRepositories("ghost_company.music_app")
 @PropertySource("classpath:music_upload_path.properties")
 public class AppConfiguration extends WebMvcConfigurerAdapter implements ApplicationContextAware, WebMvcConfigurer {
 

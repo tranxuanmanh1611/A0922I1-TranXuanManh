@@ -1,4 +1,4 @@
-package ghost_company.music_image.entity;
+package ghost_company.music_app.entity;
 
 import javax.persistence.*;
 

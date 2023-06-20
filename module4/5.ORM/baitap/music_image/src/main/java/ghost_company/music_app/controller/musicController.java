@@ -1,8 +1,8 @@
-package ghost_company.music_image.controller;
+package ghost_company.music_app.controller;
 
-import ghost_company.music_image.entity.Music;
-import ghost_company.music_image.entity.MusicForm;
-import ghost_company.music_image.service.MusicService;
+import ghost_company.music_app.entity.Music;
+import ghost_company.music_app.entity.MusicForm;
+import ghost_company.music_app.service.MusicService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
@@ -13,7 +13,6 @@ import org.springframework.web.servlet.ModelAndView;
 
 import java.io.File;
 import java.io.IOException;
-import java.nio.file.Files;
 
 @Controller
 @RequestMapping("music")

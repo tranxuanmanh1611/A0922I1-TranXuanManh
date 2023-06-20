@@ -1,7 +1,7 @@
-package ghost_company.music_image.service;
+package ghost_company.music_app.service;
 
-import ghost_company.music_image.entity.Music;
-import ghost_company.music_image.repository.MusicRepository;
+import ghost_company.music_app.entity.Music;
+import ghost_company.music_app.repository.MusicRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
