@@ -21,15 +21,18 @@ public class Comment {
     @Column(name = "comment_date")
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date commentDate;
+    @Column(name="comment_like" )
+    private int like;
 
     public Comment() {
     }
 
-    public Comment(int rating, String author, String feedBack, Date date) {
+    public Comment(int rating, String author, String feedBack, Date date,int like) {
         this.rating = rating;
         this.author = author;
         this.feedBack = feedBack;
         this.commentDate = date;
+        this.like= like;
     }
 
     public int getId() {
@@ -70,5 +73,13 @@ public class Comment {
 
     public void setCommentDate(Date commentDate) {
         this.commentDate = commentDate;
+    }
+
+    public int getLike() {
+        return like;
+    }
+
+    public void setLike(int like) {
+        this.like = like;
     }
 }

@@ -5,12 +5,14 @@
     <title>Welcome to NASA</title>
 </head>
 <style>
-    *{
+    * {
         box-sizing: border-box;
     }
-    .container{
+
+    .container {
         margin: auto;
     }
+
     table {
         border-collapse: collapse;
     }
@@ -21,7 +23,7 @@
         border-top: 1px solid blue;
     }
 </style>
-<body >
+<body>
 
 <script>
     let query = 'https://api.nasa.gov/planetary/apod?api_key=LPIjY0hQZzJ9oTaqH7qcHU8oCCkpcjwy7vYhQthB';
@@ -36,7 +38,7 @@
     };
     request.send();
 </script>
-<div class="container" style="border: 1px solid red;display: inline-flex;flex-wrap: wrap;width: 60%">
+<div class="container" style="border: 1px solid red;display: flex;flex-wrap: wrap;width: 60%">
     <div class="row"><img id="img-of-the-day" src="xxx" style="width: 300px;height: 300px"></div>
     <div class="row">
         <form action="picture/save" th:object="${comment}" method="post">
@@ -55,6 +57,12 @@
                 <td><span th:text="*{rating}"></span>*
                     <span th:text="*{author}"></span>
                     <span th:text="*{feedBack}"></span>
+                </td>
+                <td><span th:if="${c.like>0}" th:text="(*{like} + ' likes')"></span></td>
+                <td>
+                    <form th:action="@{picture/like/{id}(id=*{id})}" method="get">
+                        <input type="submit" value="LIKE">
+                    </form>
                 </td>
             </tr>
         </table>

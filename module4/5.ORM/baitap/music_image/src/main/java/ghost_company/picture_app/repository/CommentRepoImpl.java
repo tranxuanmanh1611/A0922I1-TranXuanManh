@@ -18,12 +18,21 @@ public class CommentRepoImpl implements CommentRepo{
     EntityManager entityManager;
 
     @Override
+    public Comment findById(int id) {
+       return entityManager.find(Comment.class,id);
+    }
+
+    @Override
     public List<Comment> findByDate(Date date) {
        return entityManager.createQuery("select m from Comment m where m.commentDate =  :date ").setParameter("date",date).getResultList();
     }
 
     @Override
-    public void addComment(Comment comment) {
-        entityManager.persist(comment);
+    public void saveComment(Comment comment) {
+        if (findById(comment.getId())==null){
+            entityManager.persist(comment);
+        }else {
+         entityManager.merge(comment);
+        }
     }
 }

@@ -7,6 +7,7 @@ import java.util.List;
 
 public interface CommentRepo {
     List<Comment> findByDate(Date date);
-    void addComment(Comment comment);
+    void saveComment(Comment comment);
+    Comment findById(int id);
 
 }

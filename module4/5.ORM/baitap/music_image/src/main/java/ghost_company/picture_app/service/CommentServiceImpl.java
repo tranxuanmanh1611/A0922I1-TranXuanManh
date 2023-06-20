@@ -39,9 +39,26 @@ public class CommentServiceImpl implements CommentService{
     }
 
     @Override
+    public Comment findById(int id) {
+       return commentRepo.findById(id);
+    }
+
+    @Override
     public void addComment(Comment comment) {
         Date date = new Date();
         comment.setCommentDate(date);
-        commentRepo.addComment(comment);
+        commentRepo.saveComment(comment);
+    }
+
+    @Override
+    public void updateComment(Comment comment) {
+        commentRepo.saveComment(comment);
+    }
+
+    @Override
+    public void addLike(int id) {
+        Comment commentToAddLike = findById(id);
+        commentToAddLike.setLike(commentToAddLike.getLike()+1);
+        updateComment(commentToAddLike);
     }
 }
