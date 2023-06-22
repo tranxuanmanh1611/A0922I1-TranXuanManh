@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <p><span th:if="${message!=null}" th:text="${message}"></span></p>
+    <form action="/" method="post" th:object="${form}">
+        <table>
+            <tr>
+                <th>Your firstname:</th>
+                <td><input type="text" th:field="*{firstName}"></td>
+            </tr>
+            <tr>
+                <th>Your lastname:</th>
+                <td><input type="text" th:field="*{lastName}"></td>
+                <td><button type="submit">Save</button></td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>
