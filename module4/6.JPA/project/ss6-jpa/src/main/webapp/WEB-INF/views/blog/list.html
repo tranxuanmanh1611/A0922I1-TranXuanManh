@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Your blog</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <div class="container blogList">
+        <div class="row heading">
+            <div class="row title"><h1>My blog</h1></div>
+            <div class="row function_button">
+                <a th:href="@{blogs/save}"><button>Add new blog</button></a>
+            </div>
+        </div>
+        <div class="row" th:each="b : ${blogs}" th:object="${b}">
+            <div class="column column-3">
+                <img th:if="*{imagePath!=null}" class="blogImage" th:src="@{'/image/'+ *{imagePath} }" alt="">
+                <img th:if="*{imagePath==null}" th:src="@{'/image/'+invalid.png}" class="blogImage" alt="">
+            </div>
+            <div class="column column-9">
+                <div class="row">
+                    <div class="column">
+                        <a th:href="@{/blogs/{id}(id=*{id})}" th:text="*{title}"></a>
+                    </div>
+                    <div class="column">
+                        <p th:text="*{'in '+ #dates.format(postDate,'hh:mm:ss dd/MM/yyyy')}"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,6 +1,7 @@
-package ghost_company.picture_app.service;
+package com.codegym.picture_app.service;
 
-import ghost_company.picture_app.entity.Comment;
+import com.codegym.picture_app.entity.Comment;
+
 
 import java.util.Date;
 import java.util.List;

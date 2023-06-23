@@ -11,20 +11,21 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
+@RequestMapping("/customers")
 public class CustomerController {
     @Autowired
     CustomerService customerService;
     @GetMapping
     public ModelAndView showInput(){
-        ModelAndView modelAndView = new ModelAndView("add");
+        ModelAndView modelAndView = new ModelAndView("customer_manager/add");
         modelAndView.addObject("form",new Customer());
         return modelAndView;
     }
 
-    @PostMapping
+    @PostMapping("/add")
     public ModelAndView addCustomer(@ModelAttribute("form") Customer customer){
         customerService.addCustomer(customer);
-        ModelAndView modelAndView = new ModelAndView("add");
+        ModelAndView modelAndView = new ModelAndView("customer_manager/add");
         modelAndView.addObject("message","Create Success "+customer.getFirstName() +" "+customer.getLastName());
         return modelAndView;
     }

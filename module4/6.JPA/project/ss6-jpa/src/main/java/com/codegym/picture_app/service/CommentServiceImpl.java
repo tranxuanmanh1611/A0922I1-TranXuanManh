@@ -1,7 +1,7 @@
-package ghost_company.picture_app.service;
+package com.codegym.picture_app.service;
 
-import ghost_company.picture_app.entity.Comment;
-import ghost_company.picture_app.repository.CommentRepo;
+import com.codegym.picture_app.entity.Comment;
+import com.codegym.picture_app.repository.CommentRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

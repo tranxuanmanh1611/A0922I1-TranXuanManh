@@ -1,6 +1,6 @@
-package ghost_company.picture_app.repository;
+package com.codegym.picture_app.repository;
 
-import ghost_company.picture_app.entity.Comment;
+import com.codegym.picture_app.entity.Comment;
 import org.springframework.stereotype.Repository;
 
 import javax.persistence.EntityManager;

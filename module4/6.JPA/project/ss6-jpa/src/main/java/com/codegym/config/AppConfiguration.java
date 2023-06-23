@@ -11,6 +11,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.context.support.ResourceBundleMessageSource;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
+import org.springframework.http.CacheControl;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.orm.jpa.JpaVendorAdapter;
@@ -34,13 +35,14 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import java.io.IOException;
 import java.util.Properties;
+import java.util.concurrent.TimeUnit;
 
 @Configuration
 @EnableWebMvc
 @ComponentScan("com.codegym")
 @EnableTransactionManagement
 @EnableJpaRepositories("com.codegym")
-//@PropertySource("classpath:music_upload_path.properties")
+@PropertySource("classpath:blog_image_upload.properties")
 public class AppConfiguration extends WebMvcConfigurerAdapter implements ApplicationContextAware, WebMvcConfigurer {
 
     private ApplicationContext applicationContext;
@@ -69,10 +71,10 @@ public class AppConfiguration extends WebMvcConfigurerAdapter implements Applica
       templateResolver.setCharacterEncoding("UTF-8");
       return templateResolver;
   }
-/*  @Override
+ /* @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
         registry.addResourceHandler("/resources/**")
-                .addResourceLocations("/resources/")
+                .addResourceLocations("/WEB-INF/resources/blog/image/")
                 .setCacheControl(CacheControl.maxAge(365, TimeUnit.DAYS));
     }*/
 
@@ -102,8 +104,10 @@ public class AppConfiguration extends WebMvcConfigurerAdapter implements Applica
     //Cấu hình upload file
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
-        registry.addResourceHandler("/music/**")
-                .addResourceLocations("/WEB-INF/resources/music/");
+        registry.addResourceHandler("/image/**")
+                .addResourceLocations("/WEB-INF/resources/blog/image/");
+        registry.addResourceHandler("/css/**")
+                .addResourceLocations("/WEB-INF/resources/blog/css/");
 
     }
 

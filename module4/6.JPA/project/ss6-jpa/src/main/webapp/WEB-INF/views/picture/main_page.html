@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome to NASA</title>
+</head>
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    .container {
+        margin: auto;
+    }
+
+    table {
+        border-collapse: collapse;
+    }
+
+    td {
+        height: 60px;
+        border-bottom: 1px solid blue;
+        border-top: 1px solid blue;
+    }
+</style>
+<body>
+
+<script>
+    let query = 'https://api.nasa.gov/planetary/apod?api_key=LPIjY0hQZzJ9oTaqH7qcHU8oCCkpcjwy7vYhQthB';
+    let request = new XMLHttpRequest();
+    request.open('GET', query);
+    request.onload = function () {
+        if (request.status === 200) {
+            let response = JSON.parse(request.responseText);
+            document.getElementById('img-of-the-day').setAttribute('src', response.url);
+            document.getElementById('img-src').setAttribute('value', response.url);
+        }
+    };
+    request.send();
+</script>
+<div class="container" style="border: 1px solid red;display: flex;flex-wrap: wrap;width: 60%">
+    <div class="row"><img id="img-of-the-day" src="xxx" style="width: 300px;height: 300px"></div>
+    <div class="row">
+        <form action="picture/save" th:object="${comment}" method="post">
+            <label for="rating">Rating:</label>
+            <input id="rating" type="number" style="width: 30px" th:field="*{rating}" max="5" min="1">
+            <label for="author">Author</label>
+            <input id="author" type="text" th:field="*{author}">
+            <label for="feed-back">comment:</label>
+            <input id="feed-back" type="text" th:field="*{feedBack}">
+            <input type="submit" value="comment">
+        </form>
+    </div>
+    <div class="row">
+        <table>
+            <tr th:each="c :${comments}" th:object="${c}">
+                <td><span th:text="*{rating}"></span>*
+                    <span th:text="*{author}"></span>
+                    <span th:text="*{feedBack}"></span>
+                </td>
+                <td><span th:if="${c.like>0}" th:text="(*{like} + ' likes')"></span></td>
+                <td>
+                    <form th:action="@{picture/like/{id}(id=*{id})}" method="get">
+                        <input type="submit" value="LIKE">
+                    </form>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+</div>
+</body>
+</html>

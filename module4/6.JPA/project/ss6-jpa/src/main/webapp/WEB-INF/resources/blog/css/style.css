@@ -1,0 +1,36 @@
+body{
+    box-sizing: border-box;
+}
+.container {
+    width: 500px;
+    display: flex;
+    flex-wrap: wrap;
+}
+.blogList{
+    border: 2px solid brown;
+    background-color: antiquewhite;
+    position: center;
+
+}
+.blogList.row{
+    border-bottom: 1px solid grey;
+}
+.blogImage{
+    width: 100%;
+    height: auto;
+    border-radius: 50px;
+}
+
+.row {
+    display: flex;
+    width: 100%;
+}
+.column {
+    width: 100%;
+}
+.column-3{
+    width: 25%;
+}
+.column-9{
+    width: 75%;
+}

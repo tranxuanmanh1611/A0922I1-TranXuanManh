@@ -1,4 +1,4 @@
-package ghost_company.picture_app.entity;
+package com.codegym.picture_app.entity;
 
 import org.springframework.format.annotation.DateTimeFormat;
 

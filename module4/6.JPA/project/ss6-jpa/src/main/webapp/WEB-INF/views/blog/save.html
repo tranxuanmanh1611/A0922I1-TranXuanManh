@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>My Blog</title>
+</head>
+<body>
+<form action="save" method="post" enctype="multipart/form-data" th:object="${form}">
+  <table>
+      <tr><td><input type="text" th:if="*{id!=null}" th:field="*{id}" th:value="*{id}" hidden></td></tr>
+      <tr>
+          <th>Your blog's title:</th>
+          <td><input type="text" th:field="*{title}"></td>
+      </tr>
+        <tr>
+            <th>Your blog's content:</th>
+            <td><input type="text" th:field="*{content}"></td>
+        </tr>
+      <tr>
+          <th>Blog's image:</th>
+          <td><input type="file" th:field="*{imageFile}"></td>
+      </tr>
+      <tr>
+          <td><button type="submit">Post</button></td>
+          <td><a href="/blogs">Cancel</a></td>
+      </tr>
+  </table>
+</form>
+</body>
+</html>
