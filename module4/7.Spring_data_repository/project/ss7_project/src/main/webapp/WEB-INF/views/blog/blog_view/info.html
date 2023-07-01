@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Blog</title>
+</head>
+<body>
+<div class="container blogInfo" th:object="${blog}">
+    <div class="row">
+        <h2 th:text="*{title}"></h2><span th:if="*{category!=null}" class="category"
+                                          th:text="*{category.categoryName}"></span>
+        <h3 th:text="*{postDate}"></h3>
+        <span>
+                <a th:href="@{update/{id}(id=*{id})}">
+                    <button>Edit</button>
+                </a>
+                <a th:href="@{delete/{id}(id=*{id})}">
+                    <button>Delete</button>
+                </a>
+            </span>
+    </div>
+    <div class="row blogImage">
+        <img th:src="@{'/image/' + *{imagePath}}" alt="">
+    </div>
+    <div class="row content">
+        <p th:text="*{content}"></p>
+    </div>
+</div>
+</body>
+</html>

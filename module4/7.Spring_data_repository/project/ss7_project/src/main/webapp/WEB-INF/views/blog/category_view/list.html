@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>All blog categories are here</title>
+</head>
+<body>
+<table>
+    <tr><th colspan="2" >Category list</th></tr>
+    <tr>
+        <th>Number</th>
+        <th>Category</th>
+    </tr>
+    <tr th:each="c,iStat :${categories} ">
+        <td th:text="${iStat.count}"></td>
+        <td th:text="${c.getCategoryName()}" th:href="@{categories/${c.id}}"></td>
+    </tr>
+</table>
+</body>
+</html>

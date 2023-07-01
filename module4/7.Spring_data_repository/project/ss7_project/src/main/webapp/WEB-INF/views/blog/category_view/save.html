@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="save" method="post">
+    <table  >
+        <tr><th colspan="2">Save category</th></tr>
+        <tr><td><input th:if="${form.id!=null}" type="number" th:value="${form.id}" th:field="${form.id}" hidden></td></tr>
+        <tr><th>Category: </th><td><input type="text" th:field="${form.categoryName}"></td></tr>
+        <tr><td colspan="2"><button type="submit">Save</button></td></tr>
+    </table>
+</form>
+</body>
+</html>
