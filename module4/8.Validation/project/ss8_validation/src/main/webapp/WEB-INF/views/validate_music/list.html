@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>All music here</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <th>Num.</th>
+            <th>Song's name</th>
+            <th>Singer</th>
+            <th>Genre</th>
+            <th><a th:href="@{/validate_music/save}"><button>New song</button></a></th>
+        </tr>
+        <tr th:each="s,iStat :${songs}" th:object="${s}">
+            <td th:text="${iStat.count}"></td>
+            <td th:text="*{name}"></td>
+            <td th:text="*{singer}"></td>
+            <td th:text="*{genre}"></td>
+            <td><a th:href="@{/validate_music/{id}(id=*{id})}">Detail</a></td>
+        </tr>
+    </table>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Song detail</title>
+</head>
+<body>
+<table th:object="${song}">
+    <tr>
+        <th>Song's name:</th>
+        <td th:text="*{name}"></td>
+    </tr>
+    <tr>
+        <th>Singer:</th>
+        <td th:text="*{singer}"></td>
+    </tr>
+    <tr>
+        <th>Genre:</th>
+        <td th:text="*{genre}"></td>
+    </tr>
+    <tr>
+        <td>
+            <a th:href="@{/validate_music/save/{id}(id=*{id})}">Update</a>
+        </td>
+        <td>
+            <a th:href="@{/validate_music/delete/{id}(id=*{id})}">Delete</a>
+        </td>
+    </tr>
+</table>
+</body>
+</html>
