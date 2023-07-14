@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Return book</title>
+</head>
+<body>
+<form th:action="@{return/{id}(id=${borrowCardId})}" method="post">
+    <table>
+        <tr>
+            <th>Input your borrow code:</th>
+            <td><input type="text" name="borrowCode"></td>
+        </tr>
+        <tr>
+            <th colspan="2"><button type="submit">Return</button></th>
+        </tr>
+    </table>
+</form>
+</body>
+</html>

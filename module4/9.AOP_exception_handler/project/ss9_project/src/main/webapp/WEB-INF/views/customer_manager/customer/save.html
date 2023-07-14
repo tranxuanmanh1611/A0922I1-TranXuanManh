@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" >
+    <title>Customer save</title>
+</head>
+<body>
+<form action="/customers/save" method="post" th:object="${customer}">
+    <table>
+        <tr><td><input th:if="*{id!=null}" type="number" th:field="*{id}" hidden></td></tr>
+        <tr>
+            <th>FirstName:</th>
+            <td><input type="text" th:field="*{firstName}"></td>
+        </tr>
+        <tr>
+            <th>LastName:</th>
+            <td><input type="text" th:field="*{lastName}"></td>
+        </tr>
+        <tr>
+            <th>Province:</th>
+            <td>
+                <select th:field="*{province.id}">
+                    <option th:each="p:${provinces}" th:text="${p.provinceName}" th:value="${p.id}"></option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <th>Email:</th>
+            <td><input type="text" th:field="*{email}"></td>
+        </tr>
+        <tr>
+            <th>Address:</th>
+            <td><input type="text" th:field="*{address}"></td>
+        </tr>
+        <tr>
+            <td><button type="submit">Save</button></td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>

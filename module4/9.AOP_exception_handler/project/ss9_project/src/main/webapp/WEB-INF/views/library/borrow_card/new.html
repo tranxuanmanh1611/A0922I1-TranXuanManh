@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Add new borrow</title>
+</head>
+<body>
+<form th:action="@{/my_library/borrow/}" method="post" th:object="${form}">
+    <table>
+        <tr>
+            <th colspan="2">Borrow Book</th>
+        </tr>
+        <tr>
+            <th>Borrower:</th>
+            <td><input type="text" th:field="*{borrower}"></td>
+        </tr>
+        <tr>
+            <th>Borrow code (remember this for returning book):</th>
+            <td><input type="text" th:field="*{borrowCode}"></td>
+        </tr>
+        <tr>
+            <th><input type="number" th:field="*{book.id}" th:value="*{book.id}"></th>
+        </tr>
+        <tr>
+            <th colspan="2">Book you are borrowing:</th>
+        </tr>
+        <tr>
+            <th>Book title:</th>
+            <td th:text="*{book.name}"></td>
+        </tr>
+        <tr>
+            <th>Author:</th>
+            <td th:text="*{book.author}"></td>
+        </tr>
+        <tr>
+            <th>Quantity:</th>
+            <td th:text="*{book.quantity}"></td>
+        </tr>
+        <tr>
+            <th>Content:</th>
+            <td th:text="*{book.summary}" style="width: 300px"></td>
+        </tr>
+        <tr>
+            <th colspan="2">
+                <button type="submit">Save</button>
+            </th>
+        </tr>
+    </table>
+</form>
+</body>
+</html>

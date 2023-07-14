@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>List of customers</title>
+</head>
+<body>
+<table >
+    <tr>
+        <th>Number</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Province</th>
+        <th>Email</th>
+        <th>Address</th>
+        <th></th>
+    </tr>
+    <tr th:each="c,iStat :${customers}" th:object="${c}">
+        <td th:text="${iStat.count}"></td>
+        <td th:text="*{firstName}"></td>
+        <td th:text="*{lastName}"></td>
+        <td th:text="*{province.provinceName}"></td>
+        <td th:text="*{email}"></td>
+        <td th:text="*{address}"></td>
+        <td><a th:href="@{customers/{id}(id=*{id})}">DETAIL</a></td>
+    </tr>
+</table>
+<div >
+    <a th:href="@{'/customers'(page=${(customers.number)-1})}" th:if="${customers.hasPrevious()}">Previous</a>
+    <a th:if="${customers.hasNext()}" th:href="@{'/customers'(page=${(customers.number)+1})}">Next</a>
+</div>
+</body>
+</html>

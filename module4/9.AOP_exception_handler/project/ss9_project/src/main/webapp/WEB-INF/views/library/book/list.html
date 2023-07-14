@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>School library</title>
+</head>
+<body>
+    <table th:object="${books}">
+        <tr>
+            <th>No.</th>
+            <th>Book name</th>
+            <th>Author</th>
+            <th></th>
+        </tr>
+        <tr th:each="b,iStat:${books}" th:object="${b}">
+            <td th:text="${iStat.count}"></td>
+            <td th:text="*{name}"></td>
+            <td th:text="*{author}"></td>
+            <th><a th:href="@{/my_library/book_list/{id}(id=*{id})}">DETAIL</a></th>
+        </tr>
+        <tr>
+            <th colspan="4">
+                <a th:if="${books.hasPrevious()}" th:href="@{'/my_library/book_list'(page=${(books.number)-1})}">Previous</a>
+               <span>Page <span th:text="${books.number+1}"></span> of <span th:text="${(books.size)-1}"></span> </span>
+                <a th:if="${books.hasNext()}" th:href="@{'/my_library/book_list'(page=${(books.number)+1})}">Next</a>
+            </th>
+        </tr>
+    </table>
+</body>
+</html>

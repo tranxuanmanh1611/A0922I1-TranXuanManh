@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Oops</title>
+</head>
+<body>
+  <h1>Your borrow code is incorrect</h1>
+  <a th:href="@{'/my_library/borrow/return'(id=${borrowCardId})}">Try again</a>
+</body>
+</html>

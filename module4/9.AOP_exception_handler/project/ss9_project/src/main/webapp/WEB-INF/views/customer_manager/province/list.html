@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Provinces</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <th>Number</th>
+            <th>Province</th>
+        </tr>
+        <tr th:each="p,iStat:${provinces}" th:object="${p}">
+            <td th:text="${iStat.count}"></td>
+            <td th:text="*{provinceName}"></td>
+        </tr>
+    </table>
+</body>
+</html>

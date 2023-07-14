@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Books lending</title>
+</head>
+<body>
+<table>
+    <tr>
+        <th>No.</th>
+        <th>Book</th>
+        <th>Borrower</th>
+        <th>Borrow Date</th>
+        <th></th>
+    </tr>
+    <tr th:each="b,iStat : ${borrows}" th:object="${b}">
+        <td th:text="${iStat.count}"></td>
+        <td th:text="*{book.name}"></td>
+        <td th:text="*{borrower}"></td>
+        <td th:text="*{#dates.format(borrowDate,'dd/MM/yyyy')}"></td>
+        <td><a th:href="@{'borrow/return'(id=*{id})}">Return</a></td>
+    </tr>
+</table>
+</body>
+</html>
