@@ -1,0 +1,23 @@
+
+footer div {
+    background-color: #B8D9CD;
+}
+tr.button td{
+    text-align: center;
+}
+
+tr.button td button{
+    width: 100px;
+    height: 40px;
+}
+div.form{
+    justify-content: center;
+}
+tr.title {
+    background-color: #F29849;
+}
+tr.title th{
+    font-size: 18px;
+    text-align: center;
+    color: white;
+}
