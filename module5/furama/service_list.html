@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Title</title>
+    <link rel="stylesheet" href="resources/bootstrap/css/bootstrap-grid.css">
+    <link rel="stylesheet" href="resources/bootstrap/css/bootstrap-reboot.css">
+    <link rel="stylesheet" href="resources/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="resources/css/form.css">
+    <script src="resources/jQuery/jQuery3.7.0.js"></script>
+    <link rel="stylesheet" href="resources/node_modules/bootstrap-icons/font/bootstrap-icons.css">
+
+</head>
+<body>
+<script>
+    $(function () {
+        $("#header").load("header.html");
+        $("#footer").load("footer.html");
+    });
+</script>
+<div id="header"></div>
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <table class="table">
+                <tr class="title">
+                    <th colspan="2">
+                        SERVICE LIST
+                    </th>
+                    <th colspan="7">
+                        <form action="">
+                            <input type="text" placeholder="search" name="search">
+                            <button type="submit"><i class="bi bi-search"></i></button>
+                        </form>
+                    </th>
+                </tr>
+                <tr class="fieldName">
+                    <th>No.</th>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Area</th>
+                    <th>Capacity</th>
+                    <th>Cost</th>
+                    <th>Rent type</th>
+                    <th>Status</th>
+                    <th></th>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td class="operationButton">
+                        <a href=""><i class="bi bi-pencil-square"></i></a>
+                        <a href=""><i class="bi bi-trash"></i></a>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="9">
+                        <ul class="pagination">
+                            <li class="page-item"><a href="" class="page-link">Previous</a></li>
+                            <li class="page-item"><a href="" class="page-link">1</a></li>
+                            <li class="page-item"><a href="" class="page-link">2</a></li>
+                            <li class="page-item"><a href="" class="page-link">3</a></li>
+                            <li class="page-item"><a href="" class="page-link">Next</a></li>
+                        </ul>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+<div id="footer"></div>
+</body>
+</html>

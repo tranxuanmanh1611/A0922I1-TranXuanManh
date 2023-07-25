@@ -21,3 +21,9 @@ tr.title th{
     text-align: center;
     color: white;
 }
+td.operationButton a{
+    margin: 10px;
+}
+td.operationButton i {
+    font-size: 20px;
+}
