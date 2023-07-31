@@ -1,0 +1,8 @@
+div.like{
+  display: inline-flex;
+  width: 80px;
+  border: 1px white solid;
+  background-color: bisque;
+  border-radius: 5px;
+}
+

@@ -1,0 +1,16 @@
+<h2>pet-info works!</h2>
+<div class="container">
+  <div class="row">
+    <div class="col-6">
+      <p>Another pokemon? Input and name it</p>
+      <label>Name:</label>
+      <input type="text" [(ngModel)]="pet.name">
+      <label>Image link:</label>
+      <input type="text" [(ngModel)]="pet.image">
+    </div>
+    <div class="col-6" style="border: 1px solid pink">
+      <p>Name: {{pet.name}}</p>
+      <img style="width: 150px;height: 150px" [src]="pet.image" alt="a picture of a pokemon">
+    </div>
+  </div>
+</div>

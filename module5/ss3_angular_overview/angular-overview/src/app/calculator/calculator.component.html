@@ -1,0 +1,19 @@
+<h2>calculator works!</h2>
+<div class="container calculator">
+  <div class="row monitor">
+    <div class="col">
+      <p>{{calculator.result}}</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col"><input type="number" placeholder="first operand" [(ngModel)]="calculator.firstOperand"></div>
+    <div class="col"><input type="number" placeholder="second operand" [(ngModel)]="calculator.secondOperand"></div>
+  </div>
+  <div class="row button">
+    <div class="col-3" (click)="plus()">+</div>
+    <div class="col-3" (click)="minus()">-</div>
+    <div class="col-3" (click)="multiple()">*</div>
+    <div class="col-3" (click)="divide()">/</div>
+  </div>
+
+</div>

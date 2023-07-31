@@ -1,0 +1,19 @@
+<h2>color-picker works!</h2>
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <div class="paragraph">
+        <p [style.color]="color">Bạn có nhớ thế giới của điện thoại di động như thế nào trước khi có iPhone không? Đó là thời điểm mà BlackBerry
+          là vua, Nokia vẫn còn phổ biến (còn nhớ Nokia N95?). Và người ta thậm chí vẫn sử dụng điện thoại nắp gập như
+          Motorola RAZR. Jobs từng nói rằng iPhone là ba thứ: một chiếc iPod màn hình rộng với các nút điều khiển cảm ứng,
+          một chiếc điện thoại di động mang tính cách mạng và là một thiết bị liên lạc internet đột phá. </p>
+      </div>
+    </div>
+  </div>
+  <div class="row colorpad">
+    <div class="col pink" (click)="pink()"></div>
+    <div class="col green" (click)="green()"></div>
+    <div class="col"></div>
+    <div class="col"></div>
+  </div>
+</div>

@@ -1,0 +1,35 @@
+<p>hacker-news works!</p>
+<app-nav-bar></app-nav-bar>
+<table>
+  <tr>
+    <th>IT</th>
+    <th (click)="changePetArticle()">Pet</th>
+    <th>Car</th>
+    <th>Economy</th>
+  </tr>
+</table>
+<div *ngFor="let art of displayedArticles" class="content">
+  <a [href]="art.url" target="_blank">{{art.name}}</a> <span><app-like></app-like></span>
+</div>
+<div class="new">
+  <table>
+    <tr>
+      <th>Add new post:</th>
+    </tr>
+    <tr>
+      <th>Title:</th>
+      <td>
+        <textarea [(ngModel)]="article.name" cols="30" rows="10"></textarea>
+      </td>
+    </tr>
+    <tr>
+      <th>URL:</th>
+      <td>
+        <textarea [(ngModel)]="article.url"  cols="30" rows="10"></textarea>
+      </td>
+    </tr>
+    <tr>
+      <td><button (click)="addArticle()">Post</button></td>
+    </tr>
+  </table>
+</div>

@@ -1,0 +1,11 @@
+.calculator{
+  border: 2px solid brown;
+  width: 300px;
+  height: 300px;
+}
+div.monitor{
+  border: 1px solid bisque;
+}
+div.button div{
+  border: 1px solid pink;
+}

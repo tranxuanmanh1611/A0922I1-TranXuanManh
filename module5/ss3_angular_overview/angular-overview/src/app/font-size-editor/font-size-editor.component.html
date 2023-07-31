@@ -1,0 +1,9 @@
+<h1>Practices</h1>
+<h2>font-size-editor works!</h2>
+<div>
+  <label>Enter for size (px):</label>
+  <input type="range" min="9" max="72" value="18" [(ngModel)]="fontSize">
+  <input type="text" [(ngModel)]="textColor">
+</div>
+<p class="output" [style.fontSize.px]="fontSize" [style.color]="textColor" >This is output</p>
+<p>hello {{textColor}} </p>
