@@ -1,0 +1,15 @@
+div.navigation{
+  background-color: #F29849;
+}
+div.navigation .col-9{
+  display:flex;
+  justify-content: center;
+}
+div.navigation nav{
+  position: relative;
+  font-size: 18px;
+  font-weight: bold;
+}
+div.navigation nav ul li{
+  margin: auto 20px;
+}
