@@ -7,6 +7,9 @@ import { ServiceEditComponent } from './service-edit/service-edit.component';
 import { ServiceNewComponent } from './service-new/service-new.component';
 import { HeaderComponent } from './header/header.component';
 import { LeftPanelComponent } from './left-panel/left-panel.component';
+import { CustomerListComponent } from './customer-list/customer-list.component';
+import { CustomerEditComponent } from './customer-edit/customer-edit.component';
+import { CustomerNewComponent } from './customer-new/customer-new.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +18,10 @@ import { LeftPanelComponent } from './left-panel/left-panel.component';
     ServiceEditComponent,
     ServiceNewComponent,
     HeaderComponent,
-    LeftPanelComponent
+    LeftPanelComponent,
+    CustomerListComponent,
+    CustomerEditComponent,
+    CustomerNewComponent
   ],
   imports: [
     BrowserModule
