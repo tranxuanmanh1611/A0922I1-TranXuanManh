@@ -1,0 +1,26 @@
+
+div.nameCard{
+  width:500px;
+  height: 300px ;
+  border:1px solid black;
+  margin: 50px;
+}
+div.nameCard .row{
+  height: 100%;
+}
+div.avatar{
+  height: 100%;
+  display: inline-flex;
+  align-items: center;
+}
+div.info{
+  height: 100%;
+  display: inline-flex;
+  align-items: center;
+}
+ul{
+  list-style: none;
+}
+div.content ul li {
+  font-size: 20px;
+}

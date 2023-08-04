@@ -1,0 +1,9 @@
+<h1>Rating Bar</h1>
+
+
+<div class="rating-bar">
+  <div class="rating-unit" *ngFor="let ratingUnit of ratingUnits;index as currentPosition"
+       (mouseenter)="whenMouseEnter(currentPosition)" (mouseleave)="whenMouseLeave()" (click)="select(currentPosition)">
+    <i class="bi bi-star-fill" [class.active]="ratingUnit.active"></i>
+  </div>
+</div>
