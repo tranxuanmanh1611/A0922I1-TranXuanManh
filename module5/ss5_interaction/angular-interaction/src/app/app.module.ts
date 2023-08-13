@@ -9,6 +9,11 @@ import { ProcessBarComponent } from './angular-process-bar/process-bar/process-b
 import { AngularRatingComponent } from './angular-rating/angular-rating.component';
 import { RatingBarComponent } from './angular-rating/rating-bar/rating-bar.component';
 import { AngularCountdownTimerComponent } from './angular-countdown-timer/angular-countdown-timer.component';
+import { AngularToDoAppComponent } from './angular-to-do-app/angular-to-do-app.component';
+import { TodoComponent } from './angular-to-do-app/todo/todo.component';
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import { AngularRegisterFormComponent } from './angular-register-form/angular-register-form.component';
+import { AngularLoginComponent } from './angular-login/angular-login.component';
 
 @NgModule({
   declarations: [
@@ -19,10 +24,16 @@ import { AngularCountdownTimerComponent } from './angular-countdown-timer/angula
     ProcessBarComponent,
     AngularRatingComponent,
     RatingBarComponent,
-    AngularCountdownTimerComponent
+    AngularCountdownTimerComponent,
+    AngularToDoAppComponent,
+    TodoComponent,
+    AngularRegisterFormComponent,
+    AngularLoginComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

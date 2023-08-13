@@ -1,0 +1,16 @@
+div.todo{
+  font-size: 35px;
+}
+div.even{
+  background-color: lightpink;
+  color: black;
+}
+.complete{
+  text-decoration: line-through;
+}
+.item{
+  border-radius: 10px;
+}
+.item:hover{
+  font-size: 38px;
+}

@@ -1,0 +1,43 @@
+<p>angular-login works!</p>
+<div class="container">
+  <div class="row background">
+    <div class="col-6 justify-content-center login">
+      <div class="row"><h2>Login</h2></div>
+      <form [formGroup]="loginForm">
+        <div class="row">
+          <div class="col">
+            <div class="row">
+              <label>Email</label>
+              <input type="text" class="form-control" formControlName="email">
+            </div>
+            <div *ngIf="loginForm.get('email').invalid
+                      &&loginForm.get('email').errors.email
+                      &&loginForm.get('email').touched" class="row alert alert-warning">
+              The format of the email is incorrect
+            </div>
+            <div *ngIf="loginForm.get('email').invalid
+                      &&loginForm.get('email').errors.required
+                      &&loginForm.get('email').touched" class="row alert alert-warning">
+              Empty is not allowed
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <div class="row">
+              <label>Password</label>
+              <input type="password" class="form-control" formControlName="password">
+            </div>
+
+            <div *ngIf="loginForm.get('password').invalid
+                        &&loginForm.get('password').errors.minlength
+                        &&loginForm.get('password').dirty" class="row alert alert-warning">
+              The password's length must from 6
+            </div>
+          </div>
+
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

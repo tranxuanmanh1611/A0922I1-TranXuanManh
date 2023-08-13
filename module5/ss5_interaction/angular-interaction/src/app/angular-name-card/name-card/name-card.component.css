@@ -3,7 +3,7 @@ div.nameCard{
   width:500px;
   height: 300px ;
   border:1px solid black;
-  margin: 50px;
+  margin: 100px;
 }
 div.nameCard .row{
   height: 100%;

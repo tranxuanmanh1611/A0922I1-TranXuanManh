@@ -1,0 +1,156 @@
+<p>angular-register-form works!</p>
+<h2 class="text-center">Register Form</h2>
+
+<form [formGroup]="registerForm " class="container" (ngSubmit)="receiveForm()">
+
+  <div class="row">
+    <div class="col">
+      <div class="row">
+        <label>Email:</label>
+        <input type="email" class="form-control" formControlName="email">
+      </div>
+
+      <div class="row">
+        <p class="alert alert-danger col"
+          *ngIf="registerForm.get('email').invalid
+                && registerForm.get('email').touched
+                && registerForm.get('email').errors.required">
+          Email empty not allowed
+        </p>
+        <p class="alert alert-danger col"
+           *ngIf="registerForm.get('email').invalid
+                && registerForm.get('email').dirty">
+          Email is invalid format
+        </p>
+      </div>
+    </div>
+
+  </div>
+
+  <fieldset formGroupName="passwordGroup" class="row">
+  <div class="col">
+    <div class="row">
+      <label>
+        Password:
+      </label>
+        <input type="password" class="form-control" formControlName="password">
+    </div>
+
+    <div class="row ">
+      <p class="alert alert-danger"
+         *ngIf="registerForm.get('passwordGroup.password').invalid
+                && registerForm.get('passwordGroup.password').dirty
+                && registerForm.get('passwordGroup.password').errors.minlength">
+        The password must has minimum length 6
+      </p>
+      <p class="alert alert-danger"
+         *ngIf="registerForm.get('passwordGroup.password').invalid
+                && registerForm.get('passwordGroup.password').touched
+                && registerForm.get('passwordGroup.password').errors.required">
+        You have to input password, not empty
+      </p>
+    </div>
+    <div class="row">
+      <label>
+        Confirm Password:
+      </label>
+        <input type="password" class="form-control" formControlName="confirmPassword">
+    </div>
+
+    <div class="row alert alert-danger"
+         *ngIf="registerForm.hasError('password_not_match',['passwordGroup'])
+        && registerForm.get('passwordGroup').touched">
+      the password not match
+    </div>
+  </div>
+
+  </fieldset>
+
+  <div class="row">
+    <div class="col">
+      <label class="row">
+        Country:
+      </label>
+        <select formControlName="country">
+          <option value="">Vietnam</option>
+          <option value="">Japan</option>
+          <option value="">UK</option>
+        </select>
+
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col">
+      <div class="row">
+        <label>
+          Age:
+        </label>
+        <input type="text" class="form-control" formControlName="age">
+      </div>
+      <div class="row">
+        <p class="alert alert-danger"
+            *ngIf="registerForm.get('age').invalid
+                && registerForm.get('age').dirty
+                && registerForm.get('age').errors.min">
+          Your age must about 18 (example: 19+)
+        </p>
+        <p class="alert alert-danger"
+           *ngIf="registerForm.get('age').invalid
+                && registerForm.get('age').touched
+                && registerForm.get('age').errors.required">
+          Empty is not allowed
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col gender">
+      <div class="row">
+        <div class="col">
+          <label>
+            Gender:
+          </label>
+        </div>
+        <div class="col">
+          <label for="male">Male</label>
+          <input type="radio" formControlName="gender" value="male" id="male">
+        </div>
+        <div class="col">
+          <label for="female">Female</label>
+          <input type="radio" formControlName="gender" value="female" id="female">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col">
+      <div class="row">
+        <label>
+          Phone:
+        </label>
+        <input type="text" class="form-control" formControlName="phone">
+      </div>
+
+      <div class="row">
+
+        <p class="alert alert-danger"
+        *ngIf="registerForm.get('phone').invalid
+            &&registerForm.get('phone').touched
+            &&registerForm.get('phone').errors.required">
+          Empty is not allowed
+        </p>
+        <p class="alert alert-danger"
+           *ngIf="registerForm.get('phone').invalid
+            &&registerForm.get('phone').dirty
+            &&registerForm.get('phone').errors.pattern">
+          The phone number must begin with '+84' and come after is 9-10 numbers
+        </p>
+
+      </div>
+    </div>
+  </div>
+  <div class="row"><button type="submit">Register</button></div>
+</form>

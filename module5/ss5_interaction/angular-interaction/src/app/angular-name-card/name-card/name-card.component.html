@@ -14,5 +14,18 @@
       </div>
     </div>
   </div>
-
+<div class="row">
+  <div class="col">
+    <h3>Change name card</h3>
+    <form (ngSubmit)="changeNameCard(form)" #form="ngForm" >
+      <label>Name:</label>
+      <input type="text" ngModel name="nameCard" >
+      <label>Phone:</label>
+      <input type="text" ngModel name="phone">
+      <label ngModel>Email:</label>
+      <input type="text"  ngModel name="email">
+      <input type="submit">
+    </form>
+  </div>
+</div>
 </div>

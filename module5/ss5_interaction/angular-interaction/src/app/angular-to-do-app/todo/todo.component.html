@@ -1,0 +1,12 @@
+<h2 class="text-center">Todo works!</h2>
+<div class="col-8 offset-2">
+
+    <input type="text" class="form-control" [formControl]="content" (change)="newTodo()">
+    <div class="item" *ngFor="let todo of todos;index as i;even as isEven;" [ngClass]="isEven?'even':'odd'"
+         [class.complete]="todo.complete" (click)="changeComplete(i)">
+      {{todo.content}}
+    </div>
+
+
+</div>
+
