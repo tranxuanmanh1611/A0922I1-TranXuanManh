@@ -1,0 +1,7 @@
+<h1>Welcome to the world of tunes</h1>
+<ul>
+  <li *ngFor="let song of playlist"
+      [routerLink]="['/musics',song.id]"
+  >{{song.name}}</li>
+</ul>
+<router-outlet></router-outlet>

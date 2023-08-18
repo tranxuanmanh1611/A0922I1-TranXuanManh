@@ -1,0 +1,33 @@
+
+<form *ngIf="productForm" [formGroup]="productForm" (ngSubmit)="save()">
+  <table>
+    <tr>
+      <td>
+        <label>ID</label>
+        <input type="text" formControlName="id" >
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <label>Name</label>
+        <input type="text" formControlName="name">
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <label>Price</label>
+        <input type="text" formControlName="price">
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <label>Description</label>
+        <input type="text" formControlName="description">
+      </td>
+    </tr>
+    <tr>
+      <th><button type="submit">Add</button></th>
+
+    </tr>
+  </table>
+</form>
