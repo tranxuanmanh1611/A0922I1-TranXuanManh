@@ -41,4 +41,14 @@ export class ProductService {
   findById(id: number) {
     return this.products.find(element => id === element.id);
   }
+  edit(product: Product) {
+    const productToEdit: Product = this.products.find(element => Number(product.id) === element.id);
+    productToEdit.name = product.name;
+    productToEdit.price = Number(product.price);
+    productToEdit.description = product.description;
+  }
+  delete(productId: any) {
+    const productIndexToDelete = this.products.findIndex(element => productId === element.id);
+    this.products.splice(productIndexToDelete, 1);
+  }
 }

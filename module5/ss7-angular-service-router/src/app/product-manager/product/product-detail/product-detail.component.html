@@ -30,7 +30,7 @@
       <button [routerLink]="['/product-manager/edit',product.id]">Edit</button>
     </div>
     <div class="col">
-      <button>Delete</button>
+      <button (click)="delete(product.id)">Delete</button>
     </div>
   </div>
 </div>

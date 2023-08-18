@@ -36,7 +36,7 @@ export class ProductEditComponent implements OnInit {
     }
 
     save() {
-        this.productService.addProduct(this.productForm.value);
+        this.productService.edit(this.productForm.value);
         this.router.navigateByUrl('product-manager');
     }
 
