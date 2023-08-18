@@ -1,0 +1,20 @@
+<p>word-list works!</p>
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-3 offset-3">
+      <input type="text" #search><button (click)="searchWord(search.value)">Search</button>
+
+        <ul>
+          <li *ngFor="let word of words,index as i"
+              [routerLink]="['/dictionary',word.id]">{{word.word}}</li>
+        </ul>
+
+
+    </div>
+    <div class="col-6">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

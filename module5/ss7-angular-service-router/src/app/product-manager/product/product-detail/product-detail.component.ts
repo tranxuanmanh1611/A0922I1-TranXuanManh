@@ -20,9 +20,7 @@ export class ProductDetailComponent implements OnInit, OnDestroy {
     console.log('get in the OnInit');
     this.sub = this.activatedRoute.paramMap.subscribe((paramMap: ParamMap) => {
       const productId = Number(paramMap.get('id'));
-      console.log(typeof productId);
       this.product = this.productService.findById(Number(productId));
-      console.log(this.product);
     });
   }
 

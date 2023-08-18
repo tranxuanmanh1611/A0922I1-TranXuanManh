@@ -13,6 +13,8 @@ import { ProductCreateComponent } from './product-manager/product/product-create
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { ProductDetailComponent } from './product-manager/product/product-detail/product-detail.component';
 import {ProductEditComponent} from './product-manager/product/product-edit/product-edit.component';
+import { WordListComponent } from './dictionary/word-list/word-list.component';
+import { DetailComponent } from './dictionary/detail/detail.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,9 @@ import {ProductEditComponent} from './product-manager/product/product-edit/produ
     ProductListComponent,
     ProductCreateComponent,
     ProductDetailComponent,
-    ProductEditComponent
+    ProductEditComponent,
+    WordListComponent,
+    DetailComponent,
   ],
   imports: [
     BrowserModule,
