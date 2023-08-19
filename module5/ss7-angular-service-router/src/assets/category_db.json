@@ -1,0 +1,16 @@
+{
+  "categories":  [
+    {
+      "id": 1,
+      "category" : "Mobile"
+    },
+    {
+      "id": 2,
+      "category": "Accessory"
+    },
+    {
+      "id": 3,
+      "category": "household"
+    }
+  ]
+}

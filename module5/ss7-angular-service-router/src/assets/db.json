@@ -1,0 +1,80 @@
+{
+  "database": [
+    {
+      "name" : "products",
+      "data": [
+        {
+          "id": 1,
+          "name": "IPhone 12",
+          "price": 2400000,
+          "description": "New",
+          "category": {
+            "id": 1,
+            "category": "Mobile"
+          }
+        },
+        {
+          "id": 2,
+          "name": "IPhone 11",
+          "price": 1560000,
+          "description": "Like new",
+          "category": {
+            "id": null,
+            "category": null
+          }
+        },
+        {
+          "id": 3,
+          "name": "IPhone X",
+          "price": 968000,
+          "description": "97%",
+          "category": {
+            "id": null,
+            "category": null
+          }
+        },
+        {
+          "id": 4,
+          "name": "IPhone 8",
+          "price": 7540000,
+          "description": "98%",
+          "category": {
+            "id": null,
+            "category": null
+          }
+        },
+        {
+          "id": 5,
+          "name": "IPhone 11 Pro",
+          "price": 1895000,
+          "description": "Like new",
+          "category": {
+            "id": null,
+            "category": null
+          }
+        }
+      ]
+    },
+    {
+      "id": "categories",
+      "data": [
+        {
+          "id": 1,
+          "category" : "Mobile"
+        },
+        {
+          "id": 2,
+          "category": "Accessory"
+        },
+        {
+          "id": 3,
+          "category": "household"
+        }
+      ]
+
+    }
+
+
+
+  ]
+}

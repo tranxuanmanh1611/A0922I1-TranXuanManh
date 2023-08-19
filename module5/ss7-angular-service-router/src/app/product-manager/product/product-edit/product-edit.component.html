@@ -26,8 +26,15 @@
       </td>
     </tr>
     <tr>
+      <td>
+        <label>Category</label>
+        <select formControlName="categoryId">
+          <option *ngFor="let category of categories" value="{{category.id}}">{{category.category}}</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
       <th><button type="submit">Add</button></th>
-
     </tr>
   </table>
 </form>

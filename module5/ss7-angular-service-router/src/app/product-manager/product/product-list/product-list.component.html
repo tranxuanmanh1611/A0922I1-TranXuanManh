@@ -10,12 +10,14 @@
     <th>Name</th>
     <th>Price</th>
     <th>Description</th>
+    <th>Category</th>
   </tr>
   <tr *ngFor="let product of products;index as i" [routerLink]="['/product-manager/list',product.id]">
     <td>{{i + 1}}</td>
     <td>{{product.name}}</td>
     <td>{{product.price}}</td>
     <td>{{product.description}}</td>
+    <td>{{product.category.category}}</td>
   </tr>
 </table>
 <router-outlet></router-outlet>

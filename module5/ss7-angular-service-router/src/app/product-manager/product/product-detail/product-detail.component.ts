@@ -9,26 +9,25 @@ import {Subscription} from 'rxjs';
   templateUrl: './product-detail.component.html',
   styleUrls: ['./product-detail.component.css']
 })
-export class ProductDetailComponent implements OnInit, OnDestroy {
+export class ProductDetailComponent implements OnInit {
   sub: Subscription;
-  product: Product = null;
+  product: Product;
   constructor(private productService: ProductService,
               private activatedRoute: ActivatedRoute,
               private router: Router) { }
 
   ngOnInit(): void {
     console.log('get in the OnInit');
-    this.sub = this.activatedRoute.paramMap.subscribe((paramMap: ParamMap) => {
+    this.activatedRoute.paramMap.subscribe((paramMap: ParamMap) => {
       const productId = Number(paramMap.get('id'));
-      this.product = this.productService.findById(Number(productId));
+      this.productService.findById(productId).subscribe(
+        next => this.product = next
+      );
     });
   }
-
-  ngOnDestroy(): void {
-    this.sub.unsubscribe();
-  }
   delete(id: number) {
-    this.productService.delete(id);
-    this.router.navigateByUrl('product-manager');
+    this.productService.deleteProduct(id).subscribe(
+      next => this.router.navigateByUrl('product-manager')
+    );
   }
 }

@@ -1,54 +1,28 @@
 import { Injectable } from '@angular/core';
 import {Product} from '../model/product';
+import {HttpClient} from '@angular/common/http';
+import {map} from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProductService {
-  products: Product[] = [{
-    id: 1,
-    name: 'IPhone 12',
-    price: 2400000,
-    description: 'New'
-  }, {
-    id: 2,
-    name: 'IPhone 11',
-    price: 1560000,
-    description: 'Like new'
-  }, {
-    id: 3,
-    name: 'IPhone X',
-    price: 968000,
-    description: '97%'
-  }, {
-    id: 4,
-    name: 'IPhone 8',
-    price: 7540000,
-    description: '98%'
-  }, {
-    id: 5,
-    name: 'IPhone 11 Pro',
-    price: 1895000,
-    description: 'Like new'
-  }];
-  constructor() { }
+  private readonly URL_API = 'http://localhost:3000/products';
+  constructor(private httpService: HttpClient) {}
   getAll() {
-    return this.products;
+    return this.httpService.get<Product[]>(this.URL_API);
   }
-  addProduct(product: Product) {
-    this.products.unshift(product);
+  findById(productId: number) {
+    return this.httpService.get<Product>(`${this.URL_API}/${productId}`);
   }
-  findById(id: number) {
-    return this.products.find(element => id === element.id);
+  saveProduct(product: Product) {
+    return this.httpService.patch<Product>(`${this.URL_API}/${product.id}`, product);
   }
-  edit(product: Product) {
-    const productToEdit: Product = this.products.find(element => Number(product.id) === element.id);
-    productToEdit.name = product.name;
-    productToEdit.price = Number(product.price);
-    productToEdit.description = product.description;
+  newProduct(product: Partial<Product>) {
+    console.log(product);
+    return this.httpService.post(this.URL_API, product);
   }
-  delete(productId: any) {
-    const productIndexToDelete = this.products.findIndex(element => productId === element.id);
-    this.products.splice(productIndexToDelete, 1);
+  deleteProduct(id: number) {
+    return this.httpService.delete<Product>(this.URL_API + '/' + id);
   }
 }

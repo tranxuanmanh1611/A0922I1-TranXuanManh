@@ -26,6 +26,12 @@
     </div>
   </div>
   <div class="row">
+    <div class="col">Category:</div>
+    <div class="col">
+      {{product.category.category}}
+    </div>
+  </div>
+  <div class="row">
     <div class="col">
       <button [routerLink]="['/product-manager/edit',product.id]">Edit</button>
     </div>

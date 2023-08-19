@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {ProductService} from '../../service/product.service';
 import {Product} from '../../model/product';
+import {CategoryService} from '../../service/category.service';
+import {Category} from '../../model/category';
 
 @Component({
   selector: 'app-product-list',
@@ -15,6 +17,10 @@ export class ProductListComponent implements OnInit {
     this.getAll();
   }
   getAll() {
-    this.products = this.productService.getAll();
+    this.productService.getAll().subscribe(
+      next => this.products = next,
+      error => console.log('Cannot fetch date'),
+      () => console.log('done')
+    );
   }
 }

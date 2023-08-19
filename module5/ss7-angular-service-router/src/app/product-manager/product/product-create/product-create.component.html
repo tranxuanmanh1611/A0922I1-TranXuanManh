@@ -1,5 +1,5 @@
 
-<form [formGroup]="productForm" (ngSubmit)="save()">
+<form *ngIf="productForm" [formGroup]="productForm" (ngSubmit)="save()">
   <table>
     <tr>
       <td>
@@ -26,8 +26,15 @@
       </td>
     </tr>
     <tr>
+      <td>
+        <label>Category</label>
+        <select formControlName="categoryId">
+          <option *ngFor="let category of categories" value="{{category.id}}">{{category.category}}</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
         <th><button type="submit">Add</button></th>
-
     </tr>
   </table>
 </form>
