@@ -15,6 +15,9 @@ import { ProductDetailComponent } from './product-manager/product/product-detail
 import {ProductEditComponent} from './product-manager/product/product-edit/product-edit.component';
 import { WordListComponent } from './dictionary/word-list/word-list.component';
 import { DetailComponent } from './dictionary/detail/detail.component';
+import { TodoComponent } from './todo/todo/todo.component';
+import {HttpClientModule} from '@angular/common/http';
+import {CommonModule} from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -30,12 +33,15 @@ import { DetailComponent } from './dictionary/detail/detail.component';
     ProductEditComponent,
     WordListComponent,
     DetailComponent,
+    TodoComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule,
+    CommonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,21 @@
+<h1>It's work</h1>
+
+<div class="container">
+  <div class="row newTodoBar">
+    <form [formGroup]="todoForm">
+      <input type="text" formControlName="title" (change)="addTodo()">
+    </form>
+  </div>
+  <div class="row">
+    <div class="col d-inline-flex flex-wrap">
+      <div class="todo" *ngFor="let todo of todoList; index as i">
+        <div class="title justify-content-center align-items-center"
+             [ngClass]="todo.completed?'completed' : 'uncompleted' "
+              (click)="toggleTodo(i)">
+        <span>{{todo.id}}</span>  {{todo.title}}
+        </div>
+        <button class="float-end" (click)="deleteTodo(i)">delete</button>
+      </div>
+    </div>
+  </div>
+</div>

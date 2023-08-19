@@ -1,0 +1,25 @@
+div.todo {
+  width: 30%;
+  height: 250px;
+  margin: 10px;
+  background-color: pink;
+  border: 5px solid antiquewhite;
+}
+
+div.title {
+  background-color: beige;
+  border-radius: 10px;
+  height: 60px;
+  font-family: "Bookman Old Style";
+  margin: 5px;
+  display: flex;
+}
+div.completed{
+  text-decoration-line: line-through;
+}
+div.uncompleted{
+  font-weight: bold;
+}
+div.title:hover{
+  height: 80px;
+}
